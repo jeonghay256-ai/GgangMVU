@@ -388,22 +388,15 @@
     
     
     
-      
-        
-        
-      
     
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   
@@ -495,14 +488,14 @@
   
   
     <li class="md-nav__item">
-      <a href="%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC/03-%EB%B3%80%EC%88%98-%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8/" class="md-nav__link">
+      <a href="%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC/03-%EB%B3%80%EC%88%98-%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8-AI%EA%B0%80-%EB%B3%80%EC%88%98%EB%A5%BC-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B2%8C-%EB%A7%8C%EB%93%A4%EA%B8%B0/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    변수 프롬프트
+    변수 프롬프트 - AI가 변수를 이해하게 만들기
   
 
     
@@ -839,10 +832,12 @@
 <p><strong>AI를 사용하지 않고, 변수와 EJS(임베디드 자바스크립트)만으로 제어되는 프롬프트를 어떻게 작성할까요?</strong>
 먼저 전체적인 흐름을 파악한 뒤, 문서를 읽으며 세부 사항을 이해해 봅시다.
 <em>(영상에서 언급되는 MVU beta를 모르셔도 괜찮습니다!)</em></p>
+<div style="text-align: center;">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/2QA4FUkzACU" frameborder="0" allowfullscreen></iframe>
+</div>
 
 <blockquote>
-<p>💡 <strong>참고:</strong> 이전 버전인 MVU 및 MVU beta 영상은 <a href="https://www.youtube.com/@lolo-v5f3d">여기에서 볼 수 있지만,</a> 굳이 보실 필요 없습니다. 바로 <strong>MVU Zod</strong>를 배우시면 됩니다.</p>
+<p>💡 <strong>참고:</strong> 이전 버전인 MVU 및 MVU beta 영상은 <a href="https://www.youtube.com/@lolo-v5f3d"><u>여기에서 볼 수 있지만,</u></a> 굳이 보실 필요 없습니다. 바로 <strong>MVU Zod</strong>를 배우시면 됩니다.</p>
 </blockquote>
 <hr />
 <h2 id="_2">📖 문서 소개<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
@@ -854,32 +849,32 @@
 <hr />
 <h2 id="_3">📚 추가 자료<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ul>
-<li>튜토리얼에 사용된 예제 카드는 <strong>[캐릭터 카드 예시]</strong>에서 찾으실 수 있습니다!</li>
-<li>이 튜토리얼에 나오는 프롬프트들은 '문지기(Gatekeeper) 작성 도우미'나 '메메(Miemie)의 Gemini CLI 자동 작성 워크플로우'로 생성할 수 있지만, 학습을 위해 직접 수정해보시는 걸 추천드립니다. (ㅠㅠ)</li>
+<li>튜토리얼에 사용된 예제 카드는 <a href="https://github.com/StageDog/tavern_helper_template/tree/main/src/%E8%A7%92%E8%89%B2%E5%8D%A1%E7%A4%BA%E4%BE%8B"><u><strong>캐릭터 카드 예시</strong></u></a>에서 찾으실 수 있습니다!</li>
+<li>이 튜토리얼에 나오는 프롬프트들은 <a href="https://stagedog.github.io/%E9%9D%92%E7%A9%BA%E8%8E%89/%E4%BD%9C%E5%93%81%E9%9B%86/"><u><strong>문지기(Gatekeeper) 작성 도우미'</strong></u></a>나 <a href="https://discord.com/channels/1291925535324110879/1425536223291904151/1425536223291904151"><u>'메메(Miemie)의 Gemini CLI 자동 작성 워크플로우'</u></a>로 생성할 수 있지만, 학습을 위해 직접 수정해보시는 걸 추천드립니다. (ㅠㅠ)</li>
 <li>또한 <strong>청공리(Azure Lily)</strong> 님의 '실시간 캐릭터 카드/월드북/프리셋 작성 도구'와 '실시간 프론트엔드/스크립트 작성 도구'를 사용하면 제작 경험이 훨씬 좋아집니다!<ul>
-<li>이에 대한 설명은 <strong>[[부록] PC에서 템플릿으로 카드 작성하기]</strong>에서도 다루지만, 미리 한번 읽어보시는 것을 추천해요.</li>
+<li>이에 대한 설명은 [<u><strong>[부록] PC에서 템플릿으로 카드 작성하기</strong></u>]에서도 다루지만, 미리 한번 읽어보시는 것을 추천해요.</li>
 </ul>
 </li>
 </ul>
 <hr />
 <h2 id="_4">📑 튜토리얼 목차<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ol>
-<li><a href="%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC/01-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8-%EC%84%A4%EC%B9%98/">플러그인 설치</a></li>
-<li><a href="%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC/02-%EB%B3%80%EC%88%98-%EC%84%A4%EC%A0%95/">변수 설정</a></li>
-<li><a href="%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC/03-%EB%B3%80%EC%88%98-%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8/">변수 프롬프트</a></li>
-<li><a href="%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC/04-%EB%8F%99%EC%A0%81-%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8-%EC%A0%84%EC%86%A1/">동적 프롬프트 전송</a></li>
-<li><a href="%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC/05-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%B3%80%EC%88%98-%EC%A0%9C%EC%96%B4/">스크립트 변수 제어</a></li>
-<li><a href="%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC/06-%EC%83%81%ED%83%9C%EB%B0%94/">상태바</a></li>
-<li><a href="%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC/07-%EB%B3%80%EC%88%98-%EA%B5%AC%EC%A1%B0-%EC%9E%91%EC%84%B1/">변수 구조 작성</a></li>
-<li><a href="%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC/08-%EA%B8%B0%EC%A1%B4-MVU-%EB%A7%88%EC%9D%B4%EA%B7%B8%EB%A0%88%EC%9D%B4%EC%85%98/">기존 MVU 마이그레이션</a></li>
-<li><a href="%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC/09-%EC%9E%91%EC%84%B1-%ED%85%9C%ED%94%8C%EB%A6%BF-%EC%82%AC%EC%9A%A9/">작성 템플릿 사용</a></li>
-<li><a href="%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC/10-MVU%EA%B0%80-AI%EB%A5%BC-%EB%B0%94%EB%B3%B4%EB%A1%9C-%EB%A7%8C%EB%93%9C%EB%82%98/">MVU가 AI를 바보로 만드나</a></li>
-<li><a href="%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC/11-%EC%A7%88%EB%AC%B8%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95/">질문하는 방법</a></li>
+<li><a href="%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC/01-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8-%EC%84%A4%EC%B9%98/"><u>플러그인 설치</u></a></li>
+<li><a href="%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC/02-%EB%B3%80%EC%88%98-%EC%84%A4%EC%A0%95/"><u>변수 설정</u></a></li>
+<li><a href="%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC/03-%EB%B3%80%EC%88%98-%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8-AI%EA%B0%80-%EB%B3%80%EC%88%98%EB%A5%BC-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B2%8C-%EB%A7%8C%EB%93%A4%EA%B8%B0/"><u>변수 프롬프트</u></a></li>
+<li><a href="%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC/04-%EB%8F%99%EC%A0%81-%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8-%EC%A0%84%EC%86%A1/"><u>동적 프롬프트 전송</u></a></li>
+<li><a href="%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC/05-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%B3%80%EC%88%98-%EC%A0%9C%EC%96%B4/"><u>스크립트 변수 제어</u></a></li>
+<li><a href="%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC/06-%EC%83%81%ED%83%9C%EB%B0%94/"><u>상태바</u></a></li>
+<li><a href="%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC/07-%EB%B3%80%EC%88%98-%EA%B5%AC%EC%A1%B0-%EC%9E%91%EC%84%B1/"><u>변수 구조 작성</u></a></li>
+<li><a href="%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC/08-%EA%B8%B0%EC%A1%B4-MVU-%EB%A7%88%EC%9D%B4%EA%B7%B8%EB%A0%88%EC%9D%B4%EC%85%98/"><u>기존 MVU 마이그레이션</u></a></li>
+<li><a href="%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC/09-%EC%9E%91%EC%84%B1-%ED%85%9C%ED%94%8C%EB%A6%BF-%EC%82%AC%EC%9A%A9/"><u>작성 템플릿 사용</u></a></li>
+<li><a href="%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC/10-MVU%EA%B0%80-AI%EB%A5%BC-%EB%B0%94%EB%B3%B4%EB%A1%9C-%EB%A7%8C%EB%93%9C%EB%82%98/"><u>MVU가 AI를 바보로 만드나</u></a></li>
+<li><a href="%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC/11-%EC%A7%88%EB%AC%B8%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95/"><u>질문하는 방법</u></a></li>
 </ol>
 <hr />
 <div class="admonition tip">
 <p class="admonition-title">도움이 필요하신가요?</p>
-<p>문서에서 원하는 내용을 찾지 못했다면 <a href="%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC/11-%EC%A7%88%EB%AC%B8%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95/">질문하는 방법</a>을 참고해주세요.</p>
+<p>문서에서 원하는 내용을 찾지 못했다면 <a href="%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC/11-%EC%A7%88%EB%AC%B8%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95/"><u>질문하는 방법</u></a>을 참고해주세요.</p>
 </div>
 
 
@@ -952,7 +947,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
     
     
       <script src="assets/javascripts/bundle.79ae519e.min.js"></script>

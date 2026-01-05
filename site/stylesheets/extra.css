@@ -139,13 +139,58 @@ code {
   background: var(--md-primary-fg-color);
 }
 
-/* 탭 스타일 */
+/* 탭 스타일 - 말차 테마 */
+.md-typeset .tabbed-set {
+  border: 1px solid var(--md-primary-fg-color--light);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.md-typeset .tabbed-labels {
+  background-color: var(--md-default-bg-color--lighter);
+  border-bottom: 2px solid var(--md-primary-fg-color--light);
+}
+
 .md-typeset .tabbed-labels > label {
-  border-radius: 4px 4px 0 0;
+  border-radius: 0;
+  padding: 0.8em 1.2em;
+  font-weight: 500;
+  color: var(--md-primary-fg-color);
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  transition: all 0.2s ease;
 }
 
 .md-typeset .tabbed-labels > label:hover {
   background-color: var(--md-accent-fg-color--transparent);
+  color: var(--md-primary-fg-color--dark);
+}
+
+.md-typeset .tabbed-labels > label:has(+ input:checked),
+.md-typeset .tabbed-labels > input:checked + label {
+  background-color: var(--md-default-bg-color);
+  color: var(--md-primary-fg-color--dark);
+  border-bottom: 3px solid var(--md-primary-fg-color);
+  font-weight: 700;
+}
+
+.md-typeset .tabbed-content {
+  padding: 1em;
+  background-color: var(--md-default-bg-color);
+}
+
+/* 다크 모드 탭 스타일 */
+[data-md-color-scheme="slate"] .md-typeset .tabbed-set {
+  border-color: var(--md-primary-fg-color);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .tabbed-labels {
+  background-color: var(--md-default-bg-color--light);
+  border-bottom-color: var(--md-primary-fg-color);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .tabbed-content {
+  background-color: var(--md-default-bg-color);
 }
 
 /* 푸터 스타일 */
@@ -158,4 +203,25 @@ code {
   .md-nav--primary .md-nav__title {
     background-color: var(--md-primary-fg-color);
   }
+}
+
+/* 인라인 하이라이트 박스 */
+.highlight-box {
+  background-color: #e3f2fd;
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid #90caf9;
+  white-space: nowrap;
+}
+
+/* 다크 모드용 하이라이트 박스 */
+[data-md-color-scheme="slate"] .highlight-box {
+  background-color: #1e3a5f;
+  border-color: #4a7cb5;
+}
+
+/* 이미지 중앙 정렬 */
+.center-img {
+  display: block;
+  margin: 0 auto;
 }
