@@ -74,6 +74,12 @@ code {
   border-radius: 4px;
 }
 
+/* 인라인 코드 스타일 (말차 라떼 테마) */
+.md-typeset code:not(.highlight code) {
+  color: #6d4c41;
+  background-color: #fff8e1;
+}
+
 /* 검색 박스 스타일 */
 .md-search__input {
   border-radius: 8px;
@@ -225,3 +231,94 @@ code {
   display: block;
   margin: 0 auto;
 }
+
+/* ===== 색상별 인라인 박스 ===== */
+/* 공통: 회색 배경 + 텍스트 색상만 다름 */
+
+/* 파란색 텍스트 - 세계 변수, range 등 */
+.box-blue {
+  background-color: #f0f0f0;
+  color: #1976d2;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+/* 분홍색 텍스트 - 캐릭터 속성 등 */
+.box-pink {
+  background-color: #f0f0f0;
+  color: #d81b60;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+/* 보라색 텍스트 - 칭호, 특수 변수 등 */
+.box-purple {
+  background-color: #f0f0f0;
+  color: #8e24aa;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+/* 초록색 텍스트 - type 등 */
+.box-green {
+  background-color: #f0f0f0;
+  color: #388e3c;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+/* 주황색 텍스트 - format 등 */
+.box-orange {
+  background-color: #f0f0f0;
+  color: #e65100;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+/* 빨간색 텍스트 - check 등 */
+.box-red {
+  background-color: #f0f0f0;
+  color: #c62828;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+/* 노란색/갈색 텍스트 */
+.box-yellow {
+  background-color: #f0f0f0;
+  color: #f57f17;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+/* ===== 다크 모드 대응 ===== */
+[data-md-color-scheme="slate"] .box-blue,
+[data-md-color-scheme="slate"] .box-pink,
+[data-md-color-scheme="slate"] .box-purple,
+[data-md-color-scheme="slate"] .box-green,
+[data-md-color-scheme="slate"] .box-orange,
+[data-md-color-scheme="slate"] .box-red,
+[data-md-color-scheme="slate"] .box-yellow {
+  background-color: #3a3a3a;
+}
+[data-md-color-scheme="slate"] .box-blue { color: #64b5f6; }
+[data-md-color-scheme="slate"] .box-pink { color: #f48fb1; }
+[data-md-color-scheme="slate"] .box-purple { color: #ce93d8; }
+[data-md-color-scheme="slate"] .box-green { color: #a5d6a7; }
+[data-md-color-scheme="slate"] .box-orange { color: #ffcc80; }
+[data-md-color-scheme="slate"] .box-red { color: #ef9a9a; }
+[data-md-color-scheme="slate"] .box-yellow { color: #fff59d; }
