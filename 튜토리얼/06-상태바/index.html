@@ -1,0 +1,1223 @@
+<!DOCTYPE html><html lang="ko" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="MVU Zod 플러그인 사용법을 위한 한국어 가이드">
+      
+      
+      
+        <link rel="canonical" href="https://example.github.io/mvu-zod-guide/%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC/06-%EC%83%81%ED%83%9C%EB%B0%94/">
+      
+      
+        <link rel="prev" href="../05-TavernHelper-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%B0%B1%EA%B7%B8%EB%9D%BC%EC%9A%B4%EB%93%9C-%EC%A0%9C%EC%96%B4-%EB%B0%8F-%EB%B3%80%EC%88%98-%ED%99%9C%EC%9A%A9/">
+      
+      
+        <link rel="next" href="../07-%EB%B3%80%EC%88%98-%EA%B5%AC%EC%A1%B0-%EC%9E%91%EC%84%B1/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>상태바 - MVU Zod 한국어 가이드</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Noto Sans KR";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tavernhelper" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="상단/헤더">
+    <a href="../.." title="MVU Zod 한국어 가이드" class="md-header__button md-logo" aria-label="MVU Zod 한국어 가이드" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MVU Zod 한국어 가이드
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              상태바
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom" aria-label="다크 모드로 전환" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="다크 모드로 전환" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom" aria-label="라이트 모드로 전환" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="라이트 모드로 전환" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="검색">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="공유" aria-label="공유" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            검색 초기화
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="네비게이션" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="MVU Zod 한국어 가이드" class="md-nav__button md-logo" aria-label="MVU Zod 한국어 가이드" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    MVU Zod 한국어 가이드
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    홈
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    튜토리얼
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    튜토리얼
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8-%EC%84%A4%EC%B9%98/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    플러그인 설치
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-%EB%B3%80%EC%88%98-%EC%84%A4%EC%A0%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    변수 설정
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-%EB%B3%80%EC%88%98-%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8-AI%EA%B0%80-%EB%B3%80%EC%88%98%EB%A5%BC-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B2%8C-%EB%A7%8C%EB%93%A4%EA%B8%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    변수 프롬프트 - AI가 변수를 이해하게 만들기
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8-%ED%85%9C%ED%94%8C%EB%A6%BF-%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8%EB%A5%BC-%EB%8F%99%EC%A0%81%EC%9C%BC%EB%A1%9C-%EC%A0%84%EC%86%A1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    프롬프트 템플릿 - 프롬프트를 동적으로 전송
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-TavernHelper-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%B0%B1%EA%B7%B8%EB%9D%BC%EC%9A%B4%EB%93%9C-%EC%A0%9C%EC%96%B4-%EB%B0%8F-%EB%B3%80%EC%88%98-%ED%99%9C%EC%9A%A9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TavernHelper 스크립트 - 백그라운드 제어 및 변수 활용
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    상태바
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    상태바
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        프롬프트 전용 포맷: 인터페이스 플레이스홀더 전송하지 않기
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        표시 전용 포맷: 인터페이스 표시하기
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="표시 전용 포맷: 인터페이스 표시하기">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        순수 텍스트 인터페이스
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        프론트엔드 인터페이스
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        검토
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        메시지 시작 부분에 인터페이스 표시하기
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-%EB%B3%80%EC%88%98-%EA%B5%AC%EC%A1%B0-%EC%9E%91%EC%84%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    변수 구조 작성
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-%EA%B8%B0%EC%A1%B4-MVU-%EB%A7%88%EC%9D%B4%EA%B7%B8%EB%A0%88%EC%9D%B4%EC%85%98/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    기존 MVU 마이그레이션
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-%EC%9E%91%EC%84%B1-%ED%85%9C%ED%94%8C%EB%A6%BF-%EC%82%AC%EC%9A%A9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    작성 템플릿 사용
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-MVU%EA%B0%80-AI%EB%A5%BC-%EB%B0%94%EB%B3%B4%EB%A1%9C-%EB%A7%8C%EB%93%9C%EB%82%98/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MVU가 AI를 바보로 만드나
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-%EC%A7%88%EB%AC%B8%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    질문하는 방법
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        프롬프트 전용 포맷: 인터페이스 플레이스홀더 전송하지 않기
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        표시 전용 포맷: 인터페이스 표시하기
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="표시 전용 포맷: 인터페이스 표시하기">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        순수 텍스트 인터페이스
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        프론트엔드 인터페이스
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        검토
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        메시지 시작 부분에 인터페이스 표시하기
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="tavernhelper">TavernHelper 인터페이스: 변수 표시 및 플레이어 수정 허용<a class="headerlink" href="#tavernhelper" title="Permanent link">¶</a></h1>
+<p>MVU에는 편리한 설계가 있습니다: AI 응답이 완료된 후, 자동으로 응답 끝에 특수 텍스트 <code>&lt;StatusPlaceHolderImpl/&gt;</code>를 추가합니다. 이 텍스트 자체는 단순한 플레이스홀더(자리 표시자)로, 아무런 기능이 없습니다. 하지만 Tavern 정규식을 사용하여 이를 캡처하고 다음과 같이 활용할 수 있습니다:</p>
+<ul>
+<li><strong>프롬프트 전용 포맷</strong>을 비워두면, 이 텍스트가 AI에게 전송되지 않습니다—즉, 어떤 토큰도 소비하지 않습니다!</li>
+<li><strong>표시 전용 포맷</strong>을 우리가 보여주고 싶은 어떤 콘텐츠로든 설정할 수 있습니다: 단순한 한 줄 텍스트가 될 수도 있고, 상호작용 가능한 프론트엔드 인터페이스가 될 수도 있습니다.</li>
+</ul>
+<h2 id="_1">프롬프트 전용 포맷: 인터페이스 플레이스홀더 전송하지 않기<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<p>새로운 로컬 정규식을 추가하고, <code>[전송안함]인터페이스 플레이스 홀더</code>라고 명명합니다 (아오조라 리의 정규식 명명 관례에 따라, <code>[전송안함]</code>은 AI에게 전송하지 않음을, <code>[숨김]</code>은 플레이어에게 표시하지 않음을, 또는 <code>[기능명]</code>으로 명명합니다):</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">정규식 설정 참고</label><label for="__tabbed_1_2">이미지 참조</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>스크립트 이름: [전송안함]인터페이스 플레이스 홀더
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>찾기 정규표현식: &lt;StatusPlaceHolderImpl/&gt;
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>대체: (비워둠)
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>적용 범위:
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  - [ ] 사용자 입력
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  - [x] AI 출력
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>임시:
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  - [ ] 표시 전용 포맷
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  - [x] 프롬프트 전용 포맷
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p></p><p align="center">
+  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="https://vwdygpvfycixugqsgwgn.supabase.co/storage/v1/object/public/post-images/1980dc04-3f08-4581-88cb-b949a10d585b/fab38fd8-330e-4924-a55c-b7f5aa98db66.png" data-desc-position="bottom"><img src="https://vwdygpvfycixugqsgwgn.supabase.co/storage/v1/object/public/post-images/1980dc04-3f08-4581-88cb-b949a10d585b/fab38fd8-330e-4924-a55c-b7f5aa98db66.png" width="600"></a>
+</p><p></p>
+</div>
+</div>
+</div>
+<h2 id="_2">표시 전용 포맷: 인터페이스 표시하기<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<p>마찬가지로, 새로운 로컬 정규식을 추가하고 <code>[인터페이스]상태바</code>라고 명명합니다. 먼저, SillyTavern의 Extensions (확장 기능) $\rightarrow$ Regex (정규식) 메뉴에서 새 스크립트를 만들고 아래와 같이 설정해 주세요.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">정규식 설정 참고</label><label for="__tabbed_2_2">이미지 참조</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>스크립트 이름: [인터페이스] 상태창
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>찾을 정규식: &lt;StatusPlaceHolderImpl/&gt;
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>대체할 내용: 아래 내용 참조
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>적용 범위:
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>  - [ ] 사용자 입력
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>  - [x] AI 출력
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>임시:
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>  - [x] 표시 전용 포맷
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>  - [ ] 프롬프트 전용 포맷
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>이미지대로 설정하면, <span style="color: #7b68ee;">화면에는 대체한 내용이</span> 표시되지만, AI에게 프롬프트로 전송되지는 않습니다:</p>
+<p></p><p align="center">
+  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="https://vwdygpvfycixugqsgwgn.supabase.co/storage/v1/object/public/post-images/1980dc04-3f08-4581-88cb-b949a10d585b/885e5860-6008-478e-af5c-89ee63850ced.png" data-desc-position="bottom"><img src="https://vwdygpvfycixugqsgwgn.supabase.co/storage/v1/object/public/post-images/1980dc04-3f08-4581-88cb-b949a10d585b/885e5860-6008-478e-af5c-89ee63850ced.png" width="600"></a>
+</p><p></p>
+</div>
+</div>
+</div>
+<h3 id="_3">순수 텍스트 인터페이스<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
+<p><code>user&gt;</code>, <code>{{user}}</code> 등 SillyTavern의 기본 매크로와 마찬가지로, {{format_message_variable::변수명}} 매크로 역시 AI에게 프롬프트를 전송할 때뿐만 아니라 <strong>화면에 표시될 때도</strong> 실제 값으로 치환됩니다. 따라서 복잡한 코드 대신, <code>&lt;StatusPlaceHolderImpl/&gt;</code>를 아래와 같은 간단한 텍스트로 교체하여 변수 값을 표시할 수도 있습니다.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>💖 하쿠아의 현재 의존도: {{format_message_variable::stat_data.하쿠아.의존도}}
+</code></pre></div>
+<p>이렇게 설정하면 매번 AI의 답변 아래에 위 문구가 자동으로 나타나며, 변수의 실제 수치가 올바르게 표시됩니다.</p>
+<p align="center">
+  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="https://vwdygpvfycixugqsgwgn.supabase.co/storage/v1/object/public/post-images/1980dc04-3f08-4581-88cb-b949a10d585b/0a900339-704c-4537-ab3c-512deee33a95.png" data-desc-position="bottom"><img src="https://vwdygpvfycixugqsgwgn.supabase.co/storage/v1/object/public/post-images/1980dc04-3f08-4581-88cb-b949a10d585b/0a900339-704c-4537-ab3c-512deee33a95.png" width="600"></a>
+</p>
+
+<p>물론, HTML과 CSS를 사용하여 꾸밀 수도 있습니다:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c">/* 여기에 CSS 스타일을 작성하세요 */</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="p">.</span><span class="nc">status-bar</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="kt">px</span><span class="p">;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#ff69b4</span><span class="p">;</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mh">#ff69b4</span><span class="p">;</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="kt">px</span><span class="p">;</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="p">}</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"status-bar"</span><span class="p">&gt;</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>💖 하쿠아 현재 의존도: {{format_message_variable::stat_data.하쿠아.의존도}}
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+<p align="center">
+  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="https://vwdygpvfycixugqsgwgn.supabase.co/storage/v1/object/public/post-images/1980dc04-3f08-4581-88cb-b949a10d585b/aafb8397-c4ff-439b-a3c1-e162b5703629.jpg" data-desc-position="bottom"><img src="https://vwdygpvfycixugqsgwgn.supabase.co/storage/v1/object/public/post-images/1980dc04-3f08-4581-88cb-b949a10d585b/aafb8397-c4ff-439b-a3c1-e162b5703629.jpg" width="600"></a>
+</p>
+
+<div class="admonition warning">
+<p class="admonition-title">조언</p>
+<p>하지만 솔직히 말씀드리면, 저는 <strong>단순히 변수 값만 보여주기 위해</strong> 상태창을 만드는 건 <strong>비추천</strong>합니다. 
+변수 값이 궁금한 플레이어들은 어차피 알아서 <strong>변수 관리자</strong>를 열어보거든요. 단순히 수치만 보여주는 것보다, 여러분은 <strong>훨씬 더 재미있는 일</strong>들을 할 수 있습니다.</p>
+</div>
+<p align="center">
+  <video width="600" controls>
+    <source src="../../assets/videos/frontend-interface-demo.mp4" type="video/mp4">
+  </video>
+</p>
+
+<h3 id="_4">프론트엔드 인터페이스<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
+<p>복복잡한 코드가 포함된 프론트엔드 인터페이스를 직접 짜는 건... 음, 이번 튜토리얼의 범위를 벗어나는 내용입니다. 하지만 사실 <strong><a href="https://stagedog.github.io/%E9%9D%92%E7%A9%BA%E8%8E%89/%E5%B7%A5%E5%85%B7%E7%BB%8F%E9%AA%8C/%E5%AE%9E%E6%97%B6%E7%BC%96%E5%86%99%E5%89%8D%E7%AB%AF%E7%95%8C%E9%9D%A2%E6%88%96%E8%84%9A%E6%9C%AC/"><u>실시간 프론트엔드 인터페이스 또는 스크립트 작성</u></a></strong>기능을 켜고 AI를 들들 볶아서 짜게 시키면 정말 간단합니다!</p>
+<p>프론트엔드 인터페이스를 활용하면 단순히 변수 값을 보여주거나 화면을 꾸미는 것을 넘어, 플레이어가 인터페이스와 직접 상호작용하게 만들 수도 있습니다!</p>
+<p>이번 <strong><a href="https://github.com/StageDog/tavern_helper_template/tree/main/%E7%A4%BA%E4%BE%8B/%E8%A7%92%E8%89%B2%E5%8D%A1%E7%A4%BA%E4%BE%8B"><u>캐릭터 카드 예제</u></a></strong>에서는 바로 이 점을 보여드리기 위해, 인터페이스 상에서 하쿠아의 의존도를 직접 올리거나 내릴 수 있는 기능을 넣었습니다. 물론, 변수 관리자 패널에서 수치를 수정해도 인터페이스에 실시간으로 반영된답니다.</p>
+<p align="center">
+  <video width="600" controls>
+    <source src="../../assets/videos/依存度状态栏.mp4" type="video/mp4">
+  </video>
+</p>
+
+<p>물론, 훨씬 더 복잡하고 멋진 기능도 구현할 수 있습니다! 예를 들어:</p>
+<ul>
+<li>플레이어 개입 및 퀘스트 부여: 플레이어가 인터페이스를 통해 변수를 수정하여, 자신이 조종하는 '선택받은 자(주인공)'에게 직접 임무를 내릴 수 있습니다. (이때, 시스템 로그 변수에 플레이어의 행동을 기록해 두면, AI가 스토리 진행 중에 <strong>"아, 플레이어가 방금 새로운 임무를 하달했구나"</strong>라고 인식하고 반영하게 됩니다.)</li>
+<li>AI 생성 요청: 인터페이스 버튼을 통해 AI에게 실시간으로 새로운 설정이나 전개를 생성해 달라고 요청하기. (전개지시 확장 비슷한 느낌)</li>
+<li>미연시(Galgame) 스타일 인터페이스: 화면을 비주얼 노벨 게임처럼 꾸며서 몰입감 높이기</li>
+<li>'슬레이 더 스파이어(Slay the Spire)' 같은 게임 제작: 믿기지 않겠지만, 실제로 캐릭터 카드 안에서 카드 배틀 게임을 구현한 사례가 많이 있습니다!</li>
+</ul>
+<p align="center">
+  <video width="600" controls>
+    <source src="../../assets/videos/任务界面状态栏.mp4" type="video/mp4">
+  </video>
+</p>
+
+<p>요약하자면, PC에서는 <strong><a href="https://stagedog.github.io/%E9%9D%92%E7%A9%BA%E8%8E%89/%E5%B7%A5%E5%85%B7%E7%BB%8F%E9%AA%8C/%E5%AE%9E%E6%97%B6%E7%BC%96%E5%86%99%E5%89%8D%E7%AB%AF%E7%95%8C%E9%9D%A2%E6%88%96%E8%84%9A%E6%9C%AC/">실시간 프론트엔드</a></strong>나 을 사용하는 것을 권장합니다. (매우 중요합니다!)</p>
+<p>물론, 모바일 환경이라면 복잡한 프론트엔드 인터페이스를 생성하는 게 현실적으로 어렵습니다. 그럴 땐 <strong>변수 구조</strong>와 아래에 나오는 프론트엔드 인터페이스 템플릿을 AI에게 전송해서 대신 만들어달라고 시도해 보세요.</p>
+<details class="tip">
+<summary>모바일용 간단한 프론트엔드 인터페이스 템플릿</summary>
+<ul>
+<li>
+<p>인터페이스 내에서 변수 수정이 필요한 경우: 아래의 프롬프트 외에도, AI에게 <strong><a href="https://github.com/StageDog/tavern_helper_template/blob/main/.cursor/rules/mvu%E5%8F%98%E9%87%8F%E6%A1%86%E6%9E%B6.mdc"><u>이 프롬프트</u></a></strong>를 추가로 전송해야 합니다.</p>
+</li>
+<li>
+<p>AI에게 시스템 조작을 요청하는 경우: 인터페이스를 통해 AI에게 월드 인포 생성/수정, 프리셋 변경, 음악 재생 등을 시키고 싶다면, 필요에 따라 대응하는 <strong><a href="https://n0vi028.github.io/JS-Slash-Runner-Doc/guide/%E5%8A%9F%E8%83%BD%E8%AF%A6%E6%83%85/%E8%AF%B7%E6%B1%82%E7%94%9F%E6%88%90.html"><u>타입 정의 파일</u></a></strong>을 AI에게 전송해야 합니다.</p>
+</li>
+<li>
+<p>PC 사용자 권장 사항: 만약 컴퓨터로 작업 중이라면, 직접 파일을 보내는 것보다 <strong><a href="https://stagedog.github.io/%E9%9D%92%E7%A9%BA%E8%8E%89/%E5%B7%A5%E5%85%B7%E7%BB%8F%E9%AA%8C/%E5%AE%9E%E6%97%B6%E7%BC%96%E5%86%99%E5%89%8D%E7%AB%AF%E7%95%8C%E9%9D%A2%E6%88%96%E8%84%9A%E6%9C%AC/">실시간 프론트엔드 인터페이스 또는 스크립트 작성</a></strong> 기능을 사용하여 AI가 술집(Tavern) 웹페이지를 직접 보면서 상태창을 작성하게 하는 것을 더 추천합니다.</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>  <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="o">$</span><span class="p">{</span><span class="err">순수</span><span class="w"> </span><span class="err">CSS</span><span class="w"> </span><span class="err">디자인</span><span class="w"> </span><span class="err">스타일</span><span class="p">}</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">"module"</span><span class="p">&gt;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="nx">$</span><span class="p">{</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">      </span><span class="nx">로직</span><span class="w"> </span><span class="nx">코드</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">      </span><span class="nx">example</span><span class="o">:</span><span class="w"> </span><span class="o">|-</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">        </span><span class="kd">function</span><span class="w"> </span><span class="nx">populateCharacterData</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">          </span><span class="kd">const</span><span class="w"> </span><span class="nx">all_variables</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getAllVariables</span><span class="p">();</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">          </span><span class="c1">// 변수 경로에 있는 값을 가져오거나 없으면 'N/A' 표시</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">          </span><span class="kd">const</span><span class="w"> </span><span class="nx">property_value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">_</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">all_variables</span><span class="p">,</span><span class="w"> </span><span class="s1">'stat_data.${변수 경로}'</span><span class="p">,</span><span class="w"> </span><span class="s1">'N/A'</span><span class="p">);</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">          </span><span class="nx">$</span><span class="p">(</span><span class="s1">'#${캐릭터}-${변수 경로}'</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="nx">property_value</span><span class="p">);</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">          </span><span class="p">...</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">        </span><span class="kd">function</span><span class="w"> </span><span class="nx">toggleSection</span><span class="p">(</span><span class="nx">$header</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">          </span><span class="c1">// 순수 JavaScript DOM 조작보다 jQuery 사용을 우선시함</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">          </span><span class="kd">const</span><span class="w"> </span><span class="nx">$content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$header</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="s1">'.section-content'</span><span class="p">);</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">          </span><span class="nx">$content</span><span class="p">.</span><span class="nx">toggleClass</span><span class="p">(</span><span class="s1">'expanded'</span><span class="p">);</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">          </span><span class="kd">const</span><span class="w"> </span><span class="nx">$arrow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$header</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">'span:last-child'</span><span class="p">);</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="w">          </span><span class="nx">$arrow</span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="nx">$content</span><span class="p">.</span><span class="nx">hasClass</span><span class="p">(</span><span class="s1">'expanded'</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">'▼'</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">'►'</span><span class="p">);</span>
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="w">        </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a><span class="w">          </span><span class="k">await</span><span class="w"> </span><span class="nx">waitGlobalInitialized</span><span class="p">(</span><span class="s1">'Mvu'</span><span class="p">);</span>
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a><span class="w">          </span><span class="nx">populateCharacterData</span><span class="p">();</span>
+<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>
+<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a><span class="w">          </span><span class="nx">$</span><span class="p">(</span><span class="s1">'.section-header'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a><span class="w">            </span><span class="nx">toggleSection</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
+<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a><span class="w">          </span><span class="p">});</span>
+<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a>
+<a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a><span class="w">        </span><span class="nx">$</span><span class="p">(</span><span class="nx">errorCatched</span><span class="p">(</span><span class="nx">init</span><span class="p">));</span>
+<a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a><span class="w">  </span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<a id="__codelineno-4-40" name="__codelineno-4-40" href="#__codelineno-4-40"></a><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-4-41" name="__codelineno-4-41" href="#__codelineno-4-41"></a>  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"card-body"</span><span class="p">&gt;</span>
+<a id="__codelineno-4-42" name="__codelineno-4-42" href="#__codelineno-4-42"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"section"</span><span class="p">&gt;</span>
+<a id="__codelineno-4-43" name="__codelineno-4-43" href="#__codelineno-4-43"></a>      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"section-header"</span><span class="p">&gt;</span>
+<a id="__codelineno-4-44" name="__codelineno-4-44" href="#__codelineno-4-44"></a>        <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>${캐릭터명} 핵심 상태<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<a id="__codelineno-4-45" name="__codelineno-4-45" href="#__codelineno-4-45"></a>        <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>▼<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<a id="__codelineno-4-46" name="__codelineno-4-46" href="#__codelineno-4-46"></a>      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-4-47" name="__codelineno-4-47" href="#__codelineno-4-47"></a>      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"section-content expanded"</span><span class="p">&gt;</span>
+<a id="__codelineno-4-48" name="__codelineno-4-48" href="#__codelineno-4-48"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"property"</span><span class="p">&gt;</span>
+<a id="__codelineno-4-49" name="__codelineno-4-49" href="#__codelineno-4-49"></a>          <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"property-name"</span><span class="p">&gt;</span>${한국어 변수명}<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-4-50" name="__codelineno-4-50" href="#__codelineno-4-50"></a>          <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"property-value-container"</span><span class="p">&gt;</span>
+<a id="__codelineno-4-51" name="__codelineno-4-51" href="#__codelineno-4-51"></a>            <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">"property-value"</span> <span class="na">id</span><span class="o">=</span><span class="s">"${캐릭터}-${변수 경로}"</span><span class="p">&gt;</span>--<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<a id="__codelineno-4-52" name="__codelineno-4-52" href="#__codelineno-4-52"></a>          <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-4-53" name="__codelineno-4-53" href="#__codelineno-4-53"></a>        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-4-54" name="__codelineno-4-54" href="#__codelineno-4-54"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"property"</span><span class="p">&gt;</span>
+<a id="__codelineno-4-55" name="__codelineno-4-55" href="#__codelineno-4-55"></a>          <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"property-name"</span><span class="p">&gt;</span>${...}<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-4-56" name="__codelineno-4-56" href="#__codelineno-4-56"></a>          <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"property-value-container"</span><span class="p">&gt;</span>
+<a id="__codelineno-4-57" name="__codelineno-4-57" href="#__codelineno-4-57"></a>            <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">"property-value"</span> <span class="na">id</span><span class="o">=</span><span class="s">"${...}"</span><span class="p">&gt;</span>--<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<a id="__codelineno-4-58" name="__codelineno-4-58" href="#__codelineno-4-58"></a>          <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-4-59" name="__codelineno-4-59" href="#__codelineno-4-59"></a>        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-4-60" name="__codelineno-4-60" href="#__codelineno-4-60"></a>        ...
+<a id="__codelineno-4-61" name="__codelineno-4-61" href="#__codelineno-4-61"></a>      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-4-62" name="__codelineno-4-62" href="#__codelineno-4-62"></a>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-4-63" name="__codelineno-4-63" href="#__codelineno-4-63"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"section"</span><span class="p">&gt;</span>
+<a id="__codelineno-4-64" name="__codelineno-4-64" href="#__codelineno-4-64"></a>      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"section-header"</span><span class="p">&gt;</span>
+<a id="__codelineno-4-65" name="__codelineno-4-65" href="#__codelineno-4-65"></a>        <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>월드 상태<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<a id="__codelineno-4-66" name="__codelineno-4-66" href="#__codelineno-4-66"></a>        <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>►<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<a id="__codelineno-4-67" name="__codelineno-4-67" href="#__codelineno-4-67"></a>      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-4-68" name="__codelineno-4-68" href="#__codelineno-4-68"></a>      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"section-content"</span><span class="p">&gt;</span>${...}<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-4-69" name="__codelineno-4-69" href="#__codelineno-4-69"></a>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-4-70" name="__codelineno-4-70" href="#__codelineno-4-70"></a>    ...
+<a id="__codelineno-4-71" name="__codelineno-4-71" href="#__codelineno-4-71"></a>  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-4-72" name="__codelineno-4-72" href="#__codelineno-4-72"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</code></pre></div>
+</details>
+<h2 id="_5">검토<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
+<p>지금까지 우리는 <statusplaceholderimpl>라는 플레이스홀더를 활용해 다음과 같은 특징을 가진 인터페이스를 만들었습니다.</statusplaceholderimpl></p>
+<ul>
+<li>
+<p><strong>토큰 소모 0:</strong> 화면에 화려한 상태창을 표시하는 데에는 아까운 토큰이 전혀 들지 않습니다.</p>
+</li>
+<li>
+<p><strong>효율적인 업데이트:</strong> AI는 전통적인 상태창 방식처럼 매번 모든 정보를 줄줄이 읊을 필요 없이, 변경된 변수만 갱신하면 됩니다.</p>
+</li>
+</ul>
+<p>하지만 이 튜토리얼에서 보여드린 방식에만 여러분의 상상력을 가두지 마세요.</p>
+<p>굳이 <statusplaceholderimpl>라는 태그를 고집할 필요도 없습니다. 여러분이 원하는 다른 어떤 방식으로든 인터페이스를 표시할 수 있습니다. 예를 들어, 자신만의 출력 형식을 정의하고, AI가 필요한 정보를 출력하게 만든 다음, SillyTavern의 <strong>정규식</strong>으로 이를 낚아채서 여러분이 만든 예쁜 인터페이스로 바꿔치기만 하면 되니까요.</statusplaceholderimpl></p>
+<h2 id="_6">메시지 시작 부분에 인터페이스 표시하기<a class="headerlink" href="#_6" title="Permanent link">¶</a></h2>
+<p>또한, <code>&lt;StatusPlaceHolderImpl/&gt;</code> 플레이스홀더를 사용하더라도, 정규식을 조정하여 메시지 끝(<code>&lt;StatusPlaceHolderImpl/&gt;</code>의 실제 위치)이 아닌 <strong>메시지 시작 부분</strong>에 인터페이스를 표시할 수 있습니다:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">정규식 설정 결과</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>스크립트 이름: [인터페이스]상태창
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>찾기 정규표현식: /(.*)&lt;StatusPlaceHolderImpl/&gt;/s
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>대체:
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>  여러분의 인터페이스
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>  $1
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>적용 범위:
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>  - [ ] 사용자 입력
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>  - [x] AI 출력
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>임시:
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>  - [x] 표시 전용 포맷
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>  - [ ] 프롬프트 전용 포맷
+</code></pre></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">결과</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p></p><p align="center">
+  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="https://vwdygpvfycixugqsgwgn.supabase.co/storage/v1/object/public/post-images/1980dc04-3f08-4581-88cb-b949a10d585b/224d6497-db96-40c2-8195-da45d73a2e71.jpg" data-desc-position="bottom"><img src="https://vwdygpvfycixugqsgwgn.supabase.co/storage/v1/object/public/post-images/1980dc04-3f08-4581-88cb-b949a10d585b/224d6497-db96-40c2-8195-da45d73a2e71.jpg" width="600"></a>
+</p><p></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>이 예시는 참고로만 두고, 여기 있는 튜토리얼에 얽매여 상상력을 제한받지 마세요.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  맨위로
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

@@ -1,0 +1,365 @@
+/* Matcha 색상 테마 - TOKU 스타일 */
+:root {
+  /* 라이트 모드 색상 */
+  --md-primary-fg-color: #4a5320;
+  --md-primary-fg-color--light: #6b7a2e;
+  --md-primary-fg-color--dark: #3a4218;
+  --md-accent-fg-color: #6b7a2e;
+  --md-accent-fg-color--transparent: rgba(74, 83, 32, 0.1);
+  
+  /* 배경 색상 */
+  --md-default-bg-color: #F9F7E8;
+  --md-default-bg-color--light: #f0eedd;
+  --md-default-bg-color--lighter: #f5f3e5;
+  --md-default-bg-color--lightest: #fdfcf5;
+  
+  /* 텍스트 색상 */
+  --md-typeset-color: #333333;
+}
+
+/* 다크 모드 색상 */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #6b7a2e;
+  --md-primary-fg-color--light: #8a9a4a;
+  --md-primary-fg-color--dark: #4a5320;
+  --md-accent-fg-color: #8a9a4a;
+  --md-accent-fg-color--transparent: rgba(107, 122, 46, 0.1);
+  
+  --md-default-bg-color: #1a1a1a;
+  --md-default-bg-color--light: #252525;
+  --md-default-bg-color--lighter: #2d2d2d;
+  --md-default-bg-color--lightest: #3a3a3a;
+}
+
+/* Noto Sans KR 폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* 타이포그래피 */
+.md-typeset {
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+.md-typeset h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.md-typeset h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.md-typeset h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.md-typeset h4, .md-typeset h5, .md-typeset h6 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* 콘텐츠 폭 제한 */
+.md-content__inner {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1.2rem 2rem;
+}
+
+/* 전체 배경색 강제 적용 */
+body,
+.md-main,
+.md-content,
+.md-sidebar,
+.md-container {
+  background-color: #F9F7E8 !important;
+}
+
+[data-md-color-scheme="slate"] body,
+[data-md-color-scheme="slate"] .md-main,
+[data-md-color-scheme="slate"] .md-content,
+[data-md-color-scheme="slate"] .md-sidebar,
+[data-md-color-scheme="slate"] .md-container {
+  background-color: #1a1a1a !important;
+}
+
+/* 헤더 스타일 */
+.md-header {
+  background-color: var(--md-primary-fg-color);
+}
+
+.md-header__title {
+  font-weight: 700;
+}
+
+/* 네비게이션 스타일 */
+.md-nav__link:hover {
+  color: var(--md-primary-fg-color--light);
+}
+
+.md-nav__link {
+  font-size: 0.75rem;
+}
+
+.md-nav__item--active > .md-nav__link {
+  color: var(--md-primary-fg-color);
+  font-weight: 600;
+}
+
+/* 사이드바 스타일 */
+.md-sidebar__scrollwrap {
+  scrollbar-width: thin;
+  scrollbar-color: var(--md-primary-fg-color--light) transparent;
+}
+
+/* 버튼 및 링크 호버 효과 */
+.md-button:hover,
+.md-nav__link:hover,
+a:hover {
+  color: var(--md-primary-fg-color--light);
+  transition: color 0.2s ease-in-out;
+}
+
+/* 콘텐츠 영역 스타일 */
+.md-content {
+  max-width: 100%;
+}
+
+.md-content__inner {
+  margin-bottom: 2rem;
+}
+
+/* Admonition 스타일 */
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 테이블 스타일 */
+.md-typeset table:not([class]) {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.md-typeset table:not([class]) th {
+  background-color: var(--md-primary-fg-color);
+  color: white;
+}
+
+/* 목차(TOC) 스타일 */
+.md-nav--secondary .md-nav__link--active {
+  color: var(--md-primary-fg-color);
+}
+
+/* 접히는 사이드바 화살표 */
+.md-nav__toggle ~ .md-nav {
+  transition: max-height 0.3s ease-in-out;
+}
+
+/* 스크롤바 스타일 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--md-default-bg-color--light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--md-primary-fg-color--light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--md-primary-fg-color);
+}
+
+/* 탭 스타일 - 말차 테마 */
+.md-typeset .tabbed-set {
+  border: 1px solid #5a6a28;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.md-typeset .tabbed-labels {
+  background-color: #5a6a28;  /* 진한 올리브색 */
+  border-bottom: 2px solid #4a5820;
+}
+
+.md-typeset .tabbed-labels > label {
+  border-radius: 0;
+  padding: 0.8em 1.2em;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  transition: all 0.2s ease;
+}
+
+.md-typeset .tabbed-labels > label:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+.md-typeset .tabbed-labels > label:has(+ input:checked),
+.md-typeset .tabbed-labels > input:checked + label {
+  background-color: #f5f3e0;  /* 밝은 크림색 (콘텐츠 영역과 동일) */
+  color: #3a4218;
+  border-bottom: 3px solid #5a6a28;
+  font-weight: 700;
+}
+
+.md-typeset .tabbed-content {
+  padding: 1em;
+  background-color: #f5f3e0;  /* 밝은 크림색 - 페이지 배경과 구분 */
+  border-top: none;
+}
+
+/* 다크 모드 탭 스타일 */
+[data-md-color-scheme="slate"] .md-typeset .tabbed-set {
+  border-color: #6b7a2e;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .tabbed-labels {
+  background-color: #4a5820;  /* 다크 모드용 진한 올리브색 */
+  border-bottom-color: #3a4818;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .tabbed-content {
+  background-color: #252520;  /* 다크 모드용 약간 밝은 배경 */
+}
+
+/* 푸터 스타일 */
+.md-footer {
+  background-color: var(--md-primary-fg-color);
+}
+
+/* 반응형 디자인 */
+@media screen and (max-width: 76.1875em) {
+  .md-nav--primary .md-nav__title {
+    background-color: var(--md-primary-fg-color);
+  }
+}
+
+/* 인라인 하이라이트 박스 */
+.highlight-box {
+  background-color: #e3f2fd;
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid #90caf9;
+  white-space: nowrap;
+}
+
+/* 다크 모드용 하이라이트 박스 */
+[data-md-color-scheme="slate"] .highlight-box {
+  background-color: #1e3a5f;
+  border-color: #4a7cb5;
+}
+
+/* 이미지 중앙 정렬 */
+.center-img {
+  display: block;
+  margin: 0 auto;
+}
+
+/* ===== 색상별 인라인 박스 ===== */
+/* 공통: 회색 배경 + 텍스트 색상만 다름 */
+
+/* 파란색 텍스트 - 세계 변수, range 등 */
+.box-blue {
+  background-color: #f0f0f0;
+  color: #1976d2;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+/* 분홍색 텍스트 - 캐릭터 속성 등 */
+.box-pink {
+  background-color: #f0f0f0;
+  color: #d81b60;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+/* 보라색 텍스트 - 칭호, 특수 변수 등 */
+.box-purple {
+  background-color: #f0f0f0;
+  color: #8e24aa;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+/* 초록색 텍스트 - type 등 */
+.box-green {
+  background-color: #f0f0f0;
+  color: #388e3c;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+/* 주황색 텍스트 - format 등 */
+.box-orange {
+  background-color: #f0f0f0;
+  color: #e65100;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+/* 빨간색 텍스트 - check 등 */
+.box-red {
+  background-color: #f0f0f0;
+  color: #c62828;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+/* 노란색/갈색 텍스트 */
+.box-yellow {
+  background-color: #f0f0f0;
+  color: #f57f17;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+/* ===== 다크 모드 대응 ===== */
+[data-md-color-scheme="slate"] .box-blue,
+[data-md-color-scheme="slate"] .box-pink,
+[data-md-color-scheme="slate"] .box-purple,
+[data-md-color-scheme="slate"] .box-green,
+[data-md-color-scheme="slate"] .box-orange,
+[data-md-color-scheme="slate"] .box-red,
+[data-md-color-scheme="slate"] .box-yellow {
+  background-color: #3a3a3a;
+}
+[data-md-color-scheme="slate"] .box-blue { color: #64b5f6; }
+[data-md-color-scheme="slate"] .box-pink { color: #f48fb1; }
+[data-md-color-scheme="slate"] .box-purple { color: #ce93d8; }
+[data-md-color-scheme="slate"] .box-green { color: #a5d6a7; }
+[data-md-color-scheme="slate"] .box-orange { color: #ffcc80; }
+[data-md-color-scheme="slate"] .box-red { color: #ef9a9a; }
+[data-md-color-scheme="slate"] .box-yellow { color: #fff59d; }

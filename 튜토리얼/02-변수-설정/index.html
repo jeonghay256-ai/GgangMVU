@@ -1,0 +1,1200 @@
+<!DOCTYPE html><html lang="ko" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="MVU Zod 플러그인 사용법을 위한 한국어 가이드">
+      
+      
+      
+        <link rel="canonical" href="https://example.github.io/mvu-zod-guide/%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC/02-%EB%B3%80%EC%88%98-%EC%84%A4%EC%A0%95/">
+      
+      
+        <link rel="prev" href="../01-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8-%EC%84%A4%EC%B9%98/">
+      
+      
+        <link rel="next" href="../03-%EB%B3%80%EC%88%98-%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8-AI%EA%B0%80-%EB%B3%80%EC%88%98%EB%A5%BC-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B2%8C-%EB%A7%8C%EB%93%A4%EA%B8%B0/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>변수 설정 - MVU Zod 한국어 가이드</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Noto Sans KR";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="상단/헤더">
+    <a href="../.." title="MVU Zod 한국어 가이드" class="md-header__button md-logo" aria-label="MVU Zod 한국어 가이드" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MVU Zod 한국어 가이드
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              변수 설정
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom" aria-label="다크 모드로 전환" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="다크 모드로 전환" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom" aria-label="라이트 모드로 전환" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="라이트 모드로 전환" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="검색">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="공유" aria-label="공유" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            검색 초기화
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="네비게이션" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="MVU Zod 한국어 가이드" class="md-nav__button md-logo" aria-label="MVU Zod 한국어 가이드" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    MVU Zod 한국어 가이드
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    홈
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    튜토리얼
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    튜토리얼
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8-%EC%84%A4%EC%B9%98/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    플러그인 설치
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    변수 설정
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    변수 설정
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🤔 어떤 변수가 필요한지 고민하기
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏗️ 변수 구조 설계하기
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initialize-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        변수 초기화 (Initialize Variables)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        변수 구조 및 초기화 검증하기
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-%EB%B3%80%EC%88%98-%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8-AI%EA%B0%80-%EB%B3%80%EC%88%98%EB%A5%BC-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B2%8C-%EB%A7%8C%EB%93%A4%EA%B8%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    변수 프롬프트 - AI가 변수를 이해하게 만들기
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8-%ED%85%9C%ED%94%8C%EB%A6%BF-%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8%EB%A5%BC-%EB%8F%99%EC%A0%81%EC%9C%BC%EB%A1%9C-%EC%A0%84%EC%86%A1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    프롬프트 템플릿 - 프롬프트를 동적으로 전송
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-TavernHelper-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%B0%B1%EA%B7%B8%EB%9D%BC%EC%9A%B4%EB%93%9C-%EC%A0%9C%EC%96%B4-%EB%B0%8F-%EB%B3%80%EC%88%98-%ED%99%9C%EC%9A%A9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TavernHelper 스크립트 - 백그라운드 제어 및 변수 활용
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-%EC%83%81%ED%83%9C%EB%B0%94/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    상태바
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-%EB%B3%80%EC%88%98-%EA%B5%AC%EC%A1%B0-%EC%9E%91%EC%84%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    변수 구조 작성
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-%EA%B8%B0%EC%A1%B4-MVU-%EB%A7%88%EC%9D%B4%EA%B7%B8%EB%A0%88%EC%9D%B4%EC%85%98/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    기존 MVU 마이그레이션
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-%EC%9E%91%EC%84%B1-%ED%85%9C%ED%94%8C%EB%A6%BF-%EC%82%AC%EC%9A%A9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    작성 템플릿 사용
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-MVU%EA%B0%80-AI%EB%A5%BC-%EB%B0%94%EB%B3%B4%EB%A1%9C-%EB%A7%8C%EB%93%9C%EB%82%98/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MVU가 AI를 바보로 만드나
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-%EC%A7%88%EB%AC%B8%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    질문하는 방법
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🤔 어떤 변수가 필요한지 고민하기
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏗️ 변수 구조 설계하기
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initialize-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        변수 초기화 (Initialize Variables)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        변수 구조 및 초기화 검증하기
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">변수 설정 및 초기화<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
+<p>💡 튜토리얼에 사용된 예제 카드는 <a href="https://github.com/StageDog/tavern_helper_template/tree/main/src/%E8%A7%92%E8%89%B2%E5%8D%A1%E7%A4%BA%E4%BE%8B"><u><strong>캐릭터 카드 예시</strong></u></a>에서 찾을 수 있어요!</p>
+<h2 id="_2">🤔 어떤 변수가 필요한지 고민하기<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<p>MVU 카드를 작성할 때는 먼저 이 카드에 어떤 변수가 필요한지 생각해야 합니다.</p>
+<ul>
+<li>
+<p><strong>연애 시뮬레이션</strong>: 캐릭터가 플레이어에게 느끼는 호감도를 기록해야겠죠? 호감도 단계에 따라 캐릭터의 행동 패턴을 다르게 설정할 수 있으니까요!</p>
+</li>
+<li>
+<p><strong>판타지 모험</strong>: 판타지 모험 카드를 만드셨나요? 그렇다면 가방 안에 어떤 아이템이 있는지, 어떤 스킬을 배웠는지 등 모험 중인 캐릭터의 다양한 상태를 기록하고 싶으실 겁니다.</p>
+</li>
+<li>
+<p><strong>시스템/치트물</strong>: 뭐라고요! 플레이어가 캐릭터를 연기하는 게 아니라, 캐릭터에 빙의된 <strong>'치트 시스템'</strong>을 연기한다고요? 그렇다면 현재 캐릭터에게 어떤 퀘스트를 줬는지, 시스템 상점에는 어떤 상품이 있는지 꼼꼼히 기록해야겠죠... 심지어 플레이어가 직접 퀘스트를 줄 수 있는 상호작용 가능한 인터페이스를 만들 수도 있습니다!</p>
+</li>
+<li>
+<p>...... 아무튼, 자신의 카드에 어떤 변수가 필요한지 꼭, 반드시 확실하게 생각해 두세요. 이것이 이후의 모든 내용에 영향을 미치기 때문입니다!</p>
+</li>
+</ul>
+<h2 id="_3">🏗️ 변수 구조 설계하기<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<p>필요한 변수가 정해졌다면, 이제 변수 구조 설계를 시작해 봅시다!</p>
+<p>여러분이 쉽게 작성할 수 있도록, 본문에서는 가능한 한 이미 만들어진 도구를 사용하여 카드를 작성하겠습니다! 예를 들어, <a href="https://stagedog.github.io/%E9%9D%92%E7%A9%BA%E8%8E%89/%E4%BD%9C%E5%93%81%E9%9B%86/"><u><strong>문지기(Gatekeeper) 작성 도우미</strong></u></a>나 <a href="https://discord.com/channels/1291925535324110879/1425536223291904151/1425536223291904151"><strong>메메(Miemie)의 Gemini CLI 자동 카드 작성 워크플로우</strong></a>에 있는 변수 구조 설계(스크립트) 기능을 직접 사용하여 변수 구조를 설계할 것입니다.</p>
+<p>자, <strong>'문지기 작성 도우미'</strong>를 열고, 실리태번 입력창 위에 있는 <span class="highlight-box">기능 선택</span> 버튼을 통해 [변수 구조 설계(스크립트)] 기능으로 전환한 다음, 우리의 변수 요구사항을 입력해 봅시다.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>변수를 만들어줘!
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>- '월드인포(world info)' 경로 아래에 현재 시간, 현재 날짜, 최근 사건을 기록해줘.
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>- 주인공의 여동생 '하쿠아(白娅)'가 주인공에게 갖는 의존도, 복장, 칭호를 기록해줘.
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  - 의존도는 반드시 0~100 사이여야 해.
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  - 복장에는 상의, 하의, 속옷, 양말, 신발, 장신구가 포함해.
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  - 칭호는 칭호의 효과와 하쿠아의 칭호에 대한 자기 평가를 기록해야 하며, 자기 평가를 입력하지 않으면 기본값을 "평가 대기 중"으로 설정할 것.
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  - 칭호에는 수량 제한이 있음. 의존도가 높을수록 더 많은 칭호를 가질 수 있음(의존도가 0일 때는 칭호 없음, 1~10일 때는 1개, 이런 식으로 증가). 칭호가 소유 가능 수량을 초과하면 가장 오래된 칭호를 제거해야 함.
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>- 주인공의 인벤토리에 현재 있는 아이템을 기록해줘: 아이템 설명, 수량. 수량을 안 적으면 기본값은 1이야. 수량이 0 이하면 아이템을 바로 삭제해줘.
+</code></pre></div>
+<p>요구사항을 꽤 많이 입력했네요. 만약 여러분이 기존 MVU나 MVU beta에 익숙하다면, 저 요구사항들 중 상당수가 예전에는 <code>extensible</code>, <code>$template</code> 또는 별도의 스크립트를 작성해야만 구현 가능했다는 걸 아실 겁니다. 하지만 이제 MVU Zod에서는 아주 쉽게 처리할 수 있습니다!</p>
+<p>AI도 이 방식을 잘 작성해 줍니다. 그래서 여기서는 도구를 사용해 생성하는 방법을 택했습니다. 만약 변수 구조를 직접 손으로 작성하는 법을 배우고 싶다면, 본문을 다 읽은 후 부록 부분을 참고해 주세요.</p>
+<div class="admonition warning">
+<p class="admonition-title">⚠️ 주의사항</p>
+<p>변수 구조 안에서 매크로(예: <code>{{user}}</code>)를 변수 이름으로 사용하지 마세요. 대신 '주인공'처럼 매크로가 필요 없는 이름을 써야 합니다.</p>
+<p>정 쓰고 싶다면 AI에게 변수명으로 <code>{{user}}</code> 대신 <code>[substitudeMacros('{{user}}')]</code>를 쓰라고 알려줘야 하고, 오류가 안 나길 기도해야 합니다... 그러니 그냥 안 쓰는 게 편합니다.</p>
+</div>
+<p>AI가 금방 변수 구조를 생성해 줄 겁니다! 제가 얻은 결과물은 다음과 같습니다:</p>
+<details class="info">
+<summary>변수 구조</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">registerMvuSchema</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'https://testingcf.jsdelivr.net/gh/StageDog/tavern_resource/dist/util/mvu_zod.js'</span><span class="p">;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">Schema</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">z</span><span class="p">.</span><span class="nx">object</span><span class="p">({</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nx">세계</span><span class="o">:</span><span class="w"> </span><span class="nx">z</span><span class="p">.</span><span class="nx">object</span><span class="p">({</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nx">현재시간</span><span class="o">:</span><span class="w"> </span><span class="nx">z</span><span class="p">.</span><span class="nx">string</span><span class="p">(),</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="nx">현재장소</span><span class="o">:</span><span class="w"> </span><span class="nx">z</span><span class="p">.</span><span class="nx">string</span><span class="p">(),</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="nx">최근사건</span><span class="o">:</span><span class="w"> </span><span class="nx">z</span><span class="p">.</span><span class="nx">record</span><span class="p">(</span><span class="nx">z</span><span class="p">.</span><span class="nx">string</span><span class="p">().</span><span class="nx">describe</span><span class="p">(</span><span class="s1">'사건명'</span><span class="p">),</span><span class="w"> </span><span class="nx">z</span><span class="p">.</span><span class="nx">string</span><span class="p">().</span><span class="nx">describe</span><span class="p">(</span><span class="s1">'사건 설명'</span><span class="p">)),</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="p">}),</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="nx">하쿠아</span><span class="o">:</span><span class="w"> </span><span class="nx">z</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="p">.</span><span class="nx">object</span><span class="p">({</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">      </span><span class="nx">의존도</span><span class="o">:</span><span class="w"> </span><span class="nx">z</span><span class="p">.</span><span class="nx">coerce</span><span class="p">.</span><span class="nx">number</span><span class="p">().</span><span class="nx">transform</span><span class="p">(</span><span class="nx">v</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">_</span><span class="p">.</span><span class="nx">clamp</span><span class="p">(</span><span class="nx">v</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">)),</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">      </span><span class="nx">복장</span><span class="o">:</span><span class="w"> </span><span class="nx">z</span><span class="p">.</span><span class="nx">record</span><span class="p">(</span><span class="nx">z</span><span class="p">.</span><span class="kr">enum</span><span class="p">([</span><span class="s1">'상의'</span><span class="p">,</span><span class="w"> </span><span class="s1">'하의'</span><span class="p">,</span><span class="w"> </span><span class="s1">'속옷'</span><span class="p">,</span><span class="w"> </span><span class="s1">'양말'</span><span class="p">,</span><span class="w"> </span><span class="s1">'신발'</span><span class="p">,</span><span class="w"> </span><span class="s1">'장신구'</span><span class="p">]),</span><span class="w"> </span><span class="nx">z</span><span class="p">.</span><span class="nx">string</span><span class="p">().</span><span class="nx">describe</span><span class="p">(</span><span class="s1">'복장 설명'</span><span class="p">)),</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">      </span><span class="nx">칭호</span><span class="o">:</span><span class="w"> </span><span class="nx">z</span><span class="p">.</span><span class="nx">record</span><span class="p">(</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">        </span><span class="nx">z</span><span class="p">.</span><span class="nx">string</span><span class="p">().</span><span class="nx">describe</span><span class="p">(</span><span class="s1">'칭호명'</span><span class="p">),</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">        </span><span class="nx">z</span><span class="p">.</span><span class="nx">object</span><span class="p">({</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">          </span><span class="nx">효과</span><span class="o">:</span><span class="w"> </span><span class="nx">z</span><span class="p">.</span><span class="nx">string</span><span class="p">(),</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">          </span><span class="nx">자기평가</span><span class="o">:</span><span class="w"> </span><span class="nx">z</span><span class="p">.</span><span class="nx">string</span><span class="p">().</span><span class="nx">prefault</span><span class="p">(</span><span class="s1">'평가 대기 중'</span><span class="p">),</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">        </span><span class="p">}),</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">      </span><span class="p">),</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">    </span><span class="p">})</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">    </span><span class="p">.</span><span class="nx">transform</span><span class="p">(</span><span class="nx">data</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">      </span><span class="c1">// 의존도에 따라 칭호 개수를 제한하는 로직</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">      </span><span class="nx">data</span><span class="p">.</span><span class="nx">칭호</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">_</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">칭호</span><span class="p">)</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">        </span><span class="p">.</span><span class="nx">entries</span><span class="p">()</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">        </span><span class="p">.</span><span class="nx">takeRight</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">의존도</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">10</span><span class="p">))</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="w">        </span><span class="p">.</span><span class="nx">fromPairs</span><span class="p">()</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="w">        </span><span class="p">.</span><span class="nx">value</span><span class="p">();</span>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nx">data</span><span class="p">;</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="w">    </span><span class="p">}),</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="w">  </span><span class="nx">주인공</span><span class="o">:</span><span class="w"> </span><span class="nx">z</span><span class="p">.</span><span class="nx">object</span><span class="p">({</span>
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a><span class="w">    </span><span class="nx">인벤토리</span><span class="o">:</span><span class="w"> </span><span class="nx">z</span>
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="w">      </span><span class="p">.</span><span class="nx">record</span><span class="p">(</span>
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a><span class="w">        </span><span class="nx">z</span><span class="p">.</span><span class="nx">string</span><span class="p">().</span><span class="nx">describe</span><span class="p">(</span><span class="s1">'아이템명'</span><span class="p">),</span>
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a><span class="w">        </span><span class="nx">z</span><span class="p">.</span><span class="nx">object</span><span class="p">({</span>
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a><span class="w">          </span><span class="nx">설명</span><span class="o">:</span><span class="w"> </span><span class="nx">z</span><span class="p">.</span><span class="nx">string</span><span class="p">(),</span>
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a><span class="w">          </span><span class="nx">수량</span><span class="o">:</span><span class="w"> </span><span class="nx">z</span><span class="p">.</span><span class="nx">coerce</span><span class="p">.</span><span class="nx">number</span><span class="p">().</span><span class="nx">prefault</span><span class="p">(</span><span class="mf">1</span><span class="p">),</span>
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a><span class="w">        </span><span class="p">}),</span>
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a><span class="w">      </span><span class="p">)</span>
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a><span class="w">      </span><span class="c1">// 수량이 0 이하인 아이템은 자동으로 삭제하는 로직</span>
+<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a><span class="w">      </span><span class="p">.</span><span class="nx">transform</span><span class="p">(</span><span class="nx">data</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">_</span><span class="p">.</span><span class="nx">pickBy</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span><span class="w"> </span><span class="p">({</span><span class="w"> </span><span class="nx">수량</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">수량</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span><span class="p">)),</span>
+<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a><span class="w">  </span><span class="p">}),</span>
+<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a><span class="p">});</span>
+<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a>
+<a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a><span class="nx">$</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a><span class="w">  </span><span class="nx">registerMvuSchema</span><span class="p">(</span><span class="nx">Schema</span><span class="p">);</span>
+<a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a><span class="p">});</span>
+</code></pre></div>
+</details>
+<p>이 변수 구조는 실리태번 어시스턴트 스크립트로, 우리의 변수가 어떤 모습이어야 하는지를 규정합니다. '문지기 카드 작성 도우미'가 생성 직후 자신이 어떤 기능을 수행했는지 간략히 설명해 주겠지만, 굳이 지금 당장 그 내용을 해석하려고 애쓸 필요는 없습니다. 나중에 [부록: 손으로 쓰는 변수 구조] 파트에서 제가 자세히 설명해 드릴 테니까요 qwq.</p>
+<p>이제 이것도 스크립트니까, 스크립트 라이브러리에 추가해 봅시다! MVU 본체 스크립트를 추가했을 때처럼, 실리태번 입력창 위의 블록 버튼(확장 기능) ‣ Quick Reply(혹은 스크립트 관리) ‣ 스크립트 라이브러리를 열고, +를 눌러 <strong>변수 구조</strong>라는 이름의 새 스크립트를 만듭니다. 내용은 방금 생성된 코드를 붙여넣으세요.</p>
+<h2 id="initialize-variables">변수 초기화 (Initialize Variables)<a class="headerlink" href="#initialize-variables" title="Permanent link">¶</a></h2>
+<p>변수 구조(틀)를 잡았으니, 이제 캐릭터 카드가 시작될 때의 초기 변수 값을 설정해 봅시다!</p>
+<p>'문지기 카드 작성 도우미'를 <code>변수 초기 설정 (initvar)</code> 기능으로 전환하고, 초기화 요구사항을 입력합니다. 예를 들어 <code>이 스토리 지문에 맞춰서 변수를 초기화해줘</code>, <code>하쿠아의 호감도는 20 정도로 시작하고, 이에 맞춰서 오프닝 변수를 생성해줘</code> 등등, 여러분이 원하는 대로 적으면 됩니다.</p>
+<p>아무튼, '문지기 카드 작성 도우미'가 제게 아래 내용을 출력해 주었는데, 여기에는 변수가 가져야 할 초기값들이 나열되어 있습니다. 자세히 살펴보면, 텍스트와 들여쓰기가 앞서 본 변수 구조 스크립트와 일대일로 일치한다는 것을 발견하실 수 있을 겁니다.</p>
+<details class="info">
+<summary>변수 초기화 예시</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">세계</span><span class="p">:</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">현재 시각</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-04-08 10:45</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">현재 위치</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">사립 카자마츠리 학원 고등부 2학년 A반 교실</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">최근 이슈</span><span class="p">:</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nt">전학생 배치</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">하쿠아가 막 전학을 옴. 교재를 수령 및 학교 안내 필요</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="nt">자리 배치</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">반장이 최종 좌석표를 확인 중이라 약간의 변동이 있을 수 있음</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="nt">점심시간 임박</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1교시만 지나면 점심시간, 백야에게 접근할 기회임</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="nt">백야</span><span class="p">:</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="nt">의존도</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">35</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">  </span><span class="nt">복장</span><span class="p">:</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="nt">상의</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">단정한 짙은 남색 교복 재킷, 단추를 하나도 빠짐없이 꼼꼼하게 잠갔음</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="nt">하의</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">반듯한 짙은 남색 플리츠 스커트, 무릎에 딱 떨어지는 길이</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="nt">속옷</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">순백색 속옷 세트</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">    </span><span class="nt">양말</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">검은색 오버니삭스, 주름 하나 없이 팽팽함</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">    </span><span class="nt">신발</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">검은색 가죽 학생화, 반짝이게 닦여 있음</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">    </span><span class="nt">장신구</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">없음</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">  </span><span class="nt">칭호</span><span class="p">:</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">    </span><span class="nt">송장</span><span class="p">:</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">      </span><span class="nt">효과</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">평소 행동에서 눈에 띄는 권태감과 기계적인 느낌이 묻어남</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">      </span><span class="nt">자평</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">살아있는 것 자체가 형벌이다</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">    </span><span class="nt">도피자</span><span class="p">:</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">      </span><span class="nt">효과</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;user&gt;의 모든 접촉을 본능적으로 회피함</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">      </span><span class="nt">자평</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">난 그 사람 인생에 끼어들 자격이 없어</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="nt">주인공</span><span class="p">:</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">  </span><span class="nt">소지품</span><span class="p">:</span>
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="w">    </span><span class="nt">낡은 반창고</span><span class="p">:</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="w">      </span><span class="nt">설명</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">지갑 틈새에 2년이나 넣어둔 캐릭터 반창고, 접착력은 아마 다 날아갔을 것임</span>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="w">      </span><span class="nt">수량</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="w">    </span><span class="nt">박하사탕</span><span class="p">:</span>
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="w">      </span><span class="nt">설명</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">잠 깨는 용도의 강력 박하사탕, 예전에 그녀는 이 냄새를 아주 싫어했음</span>
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="w">      </span><span class="nt">수량</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+</code></pre></div>
+</details>
+<p>이 초기값을 얻었다면, MVU가 이해할 수 있는 방식으로 알려줘야 합니다.</p>
+<p>캐릭터 카드의 <strong>월드 인포(World Info)</strong>에 새로운 항목을 하나 만들어 봅시다. 항목 이름에는 반드시 <code>[initvar]</code>가 포함되어야 하며, <strong>반드시 '비활성화(Disabled)'</strong> 상태여야 합니다. 항목 이름은 <code>[initvar]변수초기화_켜지마</code> 정도로 해두는 게 좋겠네요! 그런 다음, 방금 얻은 변수 초기값을 월드 인포에 붙여넣으세요.</p>
+<h2 id="_4">변수 구조 및 초기화 검증하기<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
+<p>변수 구조와 초기값을 설정했다면, 다음 두 가지를 확실히 확인해야 합니다.</p>
+<ul>
+<li>
+<p><span class="highlight-box">API 설정(좌측 상단 플러그 아이콘)</span>에서 <strong>'Chat Completion'</strong> 모드인지 확인.</p>
+</li>
+<li>
+<p>캐릭터 카드에 <strong>오프닝 메시지(그리팅)</strong>가 설정되어 있는지 확인.</p>
+</li>
+</ul>
+<p>이 두 가지가 준비되었다면, 이제 새 채팅을 시작하여 변수 설정을 적용 할 수 있습니다!</p>
+<p>채팅을 새로 시작한 후, 변수가 제대로 들어갔는지 확인해 봅시다. <span class="highlight-box">입력창 왼쪽 마술봉 아이콘 ‣ 변수 관리자(Variable Manager) ‣ 메시지 층(Message Scope)</span> 만약 새 채팅을 시작했는데도 변수 관리자에 아무런 변수가 없다면, 이전 단계들을 올바르게 수행했는지 먼저 점검해 주세요!</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="https://vwdygpvfycixugqsgwgn.supabase.co/storage/v1/object/public/post-images/1980dc04-3f08-4581-88cb-b949a10d585b/83bbaf6d-6b47-4654-821f-dcd0d716cc1b.png" data-desc-position="bottom"><img src="https://vwdygpvfycixugqsgwgn.supabase.co/storage/v1/object/public/post-images/1980dc04-3f08-4581-88cb-b949a10d585b/83bbaf6d-6b47-4654-821f-dcd0d716cc1b.png" alt="마법봉을 클릭해 연 모습" class="center-img"></a></p>
+<div class="admonition warning">
+<p class="admonition-title">⚠️ 트러블슈팅: '변수 초기화 실패' 경고가 뜰 때</p>
+<p>혹시 새 채팅을 시작했을 때, 노란색 상자로 <strong>"변수 초기화 실패(Variable Initialization Failed)"</strong>라는 경고가 떴나요? 경고창의 제목을 확인해 보세요.</p>
+</div>
+<p><strong>1. 경고 제목이 [MVU]인 경우</strong></p>
+<p>원인: 변수 구조 스크립트에 오류가 있습니다. </p>
+<p>해결: 변수 구조 스크립트를 껐다가 다시 켜보세요. 오류 로그를 확인합니다.</p>
+<p>PC는 <span class="highlight-box">F12를 눌러 개발자 도구의 콘솔(Console)</span> 탭 확인하시고 모바일은 <span class="highlight-box">입력창 좌측 하단 마술봉 ‣ 로그 뷰어(Log Viewer)</span>을 확인하세요.</p>
+<p>빨간색 오류 메시지가 있다면 복사해서 AI에게 보내고, 스크립트 수정을 요청하세요. 빨간색 오류가 없다면, 그냥 AI에게 스크립트를 다시 작성해달라고 하세요. </p>
+<p>정 해결이 안 된다면 게시글을 통해 원작자(Qingkong Li)에게 물어보세요.</p>
+<p><strong>2. 경고 제목이 [MVU zod]인 경우</strong></p>
+<p>원인: 변수 초기값(initvar) 내용에 오류가 있습니다.</p>
+<p>해결: 위와 마찬가지로 <span class="highlight-box">PC는 F12 키를 누른 뒤 콘솔(개발자 도구)</span>를 이용. 모바일 기기에서는 <span class="highlight-box">마법봉 아이콘(로그 뷰어)</span>에서 방금 발생한 오류 로그를 복사한 뒤, 이를 AI에게 보내고 변수 초기값을 다시 생성해달라고 요청하세요.</p>
+<h1 id="_5">오프닝별로 다른 변수 초기값 설정하기 (전체 적용 방안)<a class="headerlink" href="#_5" title="Permanent link">¶</a></h1>
+<p>캐릭터 카드의 각 오프닝(Greeting)은 보통 서로 다른 스토리 상황을 다루고 있습니다. 따라서 오프닝마다 서로 다른 변수 초기값을 설정해야 할 필요가 분명히 존재합니다.</p>
+<p>MVU를 사용하면 이제 각기 다른 변수 초기값을 설정하는 것이 매우 간단합니다. 그저 오프닝 메시지 안에 <code>&lt;initvar&gt;...&lt;/initvar&gt;</code> 태그를 사용하여 해당 오프닝에 적용할 변수 초기값을 감싸주기만 하면 됩니다.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">그리팅 메시지</label><label for="__tabbed_1_2">변수 초기값 직접 입력</label><label for="__tabbed_1_3">코드 블록으로 감싸기</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>오프닝<span class="w"> </span>2의<span class="w"> </span>스토리<span class="w"> </span>본문...
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">&lt;UpdateVariable&gt;</span><span class="w"> </span><span class="cm">&lt;!-- 추후 실리태번의 정규식(Regex) 처리를 용이하게 하기 위해, 바깥쪽을 &lt;UpdateVariable&gt;로 한 번 더 감싸줍니다. --&gt;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nt">&lt;initvar&gt;</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>오프닝<span class="w"> </span>2에<span class="w"> </span>적용할<span class="w"> </span>변수<span class="w"> </span>초기값...
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nt">&lt;/initvar&gt;</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="nt">&lt;/UpdateVariable&gt;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>오프닝 2의 스토리...</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">&lt;UpdateVariable&gt;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nt">&lt;initvar&gt;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>세계:
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span>현재<span class="w"> </span>시간:<span class="w"> </span>2025년<span class="w"> </span>4월<span class="w"> </span>7일<span class="w"> </span>월요일<span class="w"> </span>08:42
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span>현재<span class="w"> </span>장소:<span class="w"> </span>사립<span class="w"> </span>카자마츠리<span class="w"> </span>2학년<span class="w"> </span>A반<span class="w"> </span>교실
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span>최근<span class="w"> </span>사건:
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span>백아<span class="w"> </span>전학:<span class="w"> </span>백아가<span class="w"> </span>막<span class="w"> </span>사립<span class="w"> </span>성견<span class="w"> </span>학원<span class="w"> </span>2학년<span class="w"> </span>A반으로<span class="w"> </span>전학<span class="w"> </span>와서<span class="w"> </span>짧은<span class="w"> </span>자기소개를<span class="w"> </span>마침
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span>청공려<span class="w"> </span>재학<span class="w"> </span>중:<span class="w"> </span>청공려는<span class="w"> </span>같은<span class="w"> </span>학교<span class="w"> </span>육상부<span class="w"> </span>코치<span class="w"> </span>조수로<span class="w"> </span>일하고<span class="w"> </span>있으며,<span class="w"> </span>백아가<span class="w"> </span>우연히<span class="w"> </span>이<span class="w"> </span>사실을<span class="w"> </span>알게<span class="w"> </span>됨
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span>쉬는<span class="w"> </span>시간:<span class="w"> </span>수학<span class="w"> </span>수업이<span class="w"> </span>끝나고,<span class="w"> </span>학생들이<span class="w"> </span>자유롭게<span class="w"> </span>활동하며<span class="w"> </span>대화하기<span class="w"> </span>시작함
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>백아:
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">  </span>의존도:<span class="w"> </span>15
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">  </span>복장:
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">    </span>상의:<span class="w"> </span>단정한<span class="w"> </span>사립<span class="w"> </span>성견<span class="w"> </span>학원<span class="w"> </span>여학생<span class="w"> </span>교복
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">    </span>하의:<span class="w"> </span>단정한<span class="w"> </span>사립<span class="w"> </span>성견<span class="w"> </span>학원<span class="w"> </span>여학생<span class="w"> </span>교복
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">    </span>속옷:<span class="w"> </span>흰색<span class="w"> </span>면<span class="w"> </span>속옷<span class="w"> </span>세트
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">    </span>양말:<span class="w"> </span>흰색<span class="w"> </span>오버니삭스
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">    </span>신발:<span class="w"> </span>검은색<span class="w"> </span>가죽<span class="w"> </span>학생화
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">    </span>장신구:<span class="w"> </span>없음
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">  </span>칭호:
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">    </span>전학생:
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">      </span>효과:<span class="w"> </span>갓<span class="w"> </span>전학<span class="w"> </span>와서<span class="w"> </span>환경이<span class="w"> </span>낯섦.<span class="w"> </span>타인의<span class="w"> </span>주의를<span class="w"> </span>끌기<span class="w"> </span>쉬우나<span class="w"> </span>본인은<span class="w"> </span>조용히<span class="w"> </span>지내고<span class="w"> </span>싶어<span class="w"> </span>함
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">      </span>자평:<span class="w"> </span>또<span class="w"> </span>새로운<span class="w"> </span>시작이지만,<span class="w"> </span>난<span class="w"> </span>분명<span class="w"> </span>또<span class="w"> </span>모든<span class="w"> </span>걸<span class="w"> </span>망칠<span class="w"> </span>거야
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">    </span>도피자:
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="w">      </span>효과:<span class="w"> </span>습관적인<span class="w"> </span>회피가<span class="w"> </span>고통스러운<span class="w"> </span>인간관계를<span class="w"> </span>가져올<span class="w"> </span>수<span class="w"> </span>있지만,<span class="w"> </span>내심<span class="w"> </span>온기를<span class="w"> </span>갈망함
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="w">      </span>자평:<span class="w"> </span>나<span class="w"> </span>같은<span class="w"> </span>사람은<span class="w"> </span>관계를<span class="w"> </span>맺을<span class="w"> </span>자격이<span class="w"> </span>없어.<span class="w"> </span>멀어지는<span class="w"> </span>게<span class="w"> </span>모두를<span class="w"> </span>위한<span class="w"> </span>최선의<span class="w"> </span>선택이야
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="w">    </span>자기<span class="w"> </span>파괴<span class="w"> </span>성향:
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="w">      </span>효과:<span class="w"> </span>자기<span class="w"> </span>부정과<span class="w"> </span>자해를<span class="w"> </span>통해<span class="w"> </span>스스로를<span class="w"> </span>벌하며,<span class="w"> </span>고통을<span class="w"> </span>마땅한<span class="w"> </span>것으로<span class="w"> </span>여김
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a><span class="w">      </span>자평:<span class="w"> </span>살아있는<span class="w"> </span>것<span class="w"> </span>자체가<span class="w"> </span>내<span class="w"> </span>가장<span class="w"> </span>큰<span class="w"> </span>형벌이며,<span class="w"> </span>이<span class="w"> </span>고통은<span class="w"> </span>내가<span class="w"> </span>마땅히<span class="w"> </span>받아야<span class="w"> </span>할<span class="w"> </span>몫이야
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>주인공:
+<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a><span class="w">  </span>소지품:
+<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a><span class="w">    </span>낡은<span class="w"> </span>손수건:
+<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a><span class="w">      </span>설명:<span class="w"> </span>구석에<span class="w"> </span>삐뚤빼뚤한<span class="w"> </span>토끼가<span class="w"> </span>수놓아진<span class="w"> </span>손수건.<span class="w"> </span>오래되었지만<span class="w"> </span>아주<span class="w"> </span>깨끗하게<span class="w"> </span>세탁되어<span class="w"> </span>있음
+<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a><span class="w">      </span>수량:<span class="w"> </span>1
+<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a><span class="w">    </span>초시계:
+<a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a><span class="w">      </span>설명:<span class="w"> </span>육상부에서<span class="w"> </span>사용하는<span class="w"> </span>타이머,<span class="w"> </span>목에<span class="w"> </span>걸고<span class="w"> </span>있음
+<a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a><span class="w">      </span>수량:<span class="w"> </span>1
+<a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a><span class="nt">&lt;/initvar&gt;</span>
+<a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a><span class="nt">&lt;/UpdateVariable&gt;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>오프닝 2의 스토리 본문...</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>&lt;UpdateVariable&gt;
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>&lt;initvar&gt;
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="hll">```yaml
+</span><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>세계:
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>  현재 시간: 2025년 4월 7일 월요일 08:42
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>  현재 장소: 사립 카자마츠리 학원 2학년 A반 교실
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>  최근 사건:
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>    백아 전학: 백아가 막 사립 성견 학원 2학년 A반으로 전학 와서 짧은 자기소개를 마침
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>    청공려 재학 중: 청공려는 같은 학교 육상부 코치 조수로 일하고 있으며, 백아가 우연히 이 사실을 알게 됨
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>    쉬는 시간: 수학 수업이 끝나고, 학생들이 자유롭게 활동하며 대화하기 시작함
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>백아:
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>  의존도: 15
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>  복장:
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>    상의: 단정한 사립 성견 학원 여학생 교복
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>    하의: 단정한 사립 성견 학원 여학생 교복
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>    속옷: 흰색 면 속옷 세트
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>    양말: 흰색 오버니삭스
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>    신발: 검은색 가죽 학생화
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>    장신구: 없음
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>  칭호:
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>    전학생:
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>      효과: 갓 전학 와서 환경이 낯섦. 타인의 주의를 끌기 쉬우나 본인은 조용히 지내고 싶어 함
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>      자평: 또 새로운 시작이지만, 난 분명 또 모든 걸 망칠 거야
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>    도피자:
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>      효과: 습관적인 회피가 고통스러운 인간관계를 가져올 수 있지만, 내심 온기를 갈망함
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>      자평: 나 같은 사람은 관계를 맺을 자격이 없어. 멀어지는 게 모두를 위한 최선의 선택이야
+<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>    자기 파괴 성향:
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>      효과: 자기 부정과 자해를 통해 스스로를 벌하며, 고통을 마땅한 것으로 여김
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>      자평: 살아있는 것 자체가 내 가장 큰 형벌이며, 이 고통은 내가 마땅히 받아야 할 몫이야
+<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>주인공:
+<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>  소지품:
+<a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a>    낡은 손수건:
+<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a>      설명: 구석에 삐뚤빼뚤한 토끼가 수놓아진 손수건. 오래되었지만 아주 깨끗하게 세탁되어 있음
+<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a>      수량: 1
+<a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a>    초시계:
+<a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a>      설명: 육상부에서 사용하는 타이머, 목에 걸고 있음
+<a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a>      수량: 1
+<a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a>```
+<a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a>&lt;/initvar&gt;
+<a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a>&lt;/UpdateVariable&gt;
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>즉, <code>[initvar] 변수 초기화(열지 않음)</code> 항목은 모든 오프닝에 대한 <strong>"최소한의 안전장치(보트)"</strong>로서의 변수 초기화이며, 오프닝 내부의 <code>&lt;initvar&gt;...&lt;/initvar&gt;</code>는 <strong>특정 오프닝만을 위해 개별적으로 설정</strong>하는 변수 초기화입니다.</p>
+<ul>
+<li>만약 오프닝 안에 <code>&lt;initvar&gt;...&lt;/initvar&gt;</code>가 설정되어 있다면, 해당 오프닝은 <code>[initvar] 변수 초기화(열지 않음)</code> 항목을 <strong>완전히 무시</strong>하고, <code>&lt;initvar&gt;...&lt;/initvar&gt;</code> 블록을 사용하여 변수를 초기화합니다.</li>
+<li>반대로, 오프닝 안에 <code>&lt;initvar&gt;...&lt;/initvar&gt;</code>가 설정되어 있지 않다면, 해당 오프닝은 <code>[initvar] 변수 초기화(열지 않음)</code> 항목을 사용하여 변수를 초기화합니다.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">팁</p>
+<p><code>&lt;initvar&gt;...&lt;/initvar&gt;</code>와 같은 초기화 방법이 존재하기 때문에, 월드 인포(World Info)에 <code>[initvar] 변수 초기화(열지 않음)</code> 항목을 아예 만들지 않고, <strong>모든 오프닝마다 개별적으로 <code>&lt;initvar&gt;...&lt;/initvar&gt;</code> 블록을 설정</strong>하는 것도 완전히 가능한 방법입니다.</p>
+</div>
+<p>당연하게도, <code>&lt;initvar&gt;...&lt;/initvar&gt;</code>의 작성법은 <code>[initvar] 변수 초기화(열지 않음)</code> 항목과 완전히 동일합니다. 따라서:</p>
+<ul>
+<li>만약 오프닝마다 변수 초기값이 <strong>많이 다르다면</strong>, <span class="highlight-box">[문지기 카드 작성 도우미 - 변수 초기 설정(initvar)] 기능</span>을 사용하여 생성할 수 있습니다.</li>
+<li>만약 차이가 크지 않다면, <code>실리태번 입력창 왼쪽 마술봉 아이콘</code> ‣ <code>변수 관리자(Variable Manager)</code> ‣ <code>메시지(Message)</code> 탭에서 변수 초기값을 직접 수정한 뒤, 수정된 결과를 <code>&lt;initvar&gt;</code> 블록 안에 복사해 넣으면 됩니다.</li>
+</ul>
+<video width="400" controls class="center-img">
+  <source src="../../assets/videos/copy-variable.mp4" type="video/mp4">
+</video>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  맨위로
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
