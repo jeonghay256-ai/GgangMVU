@@ -187,56 +187,57 @@ a:hover {
 
 /* 탭 스타일 - 말차 테마 */
 .md-typeset .tabbed-set {
-  border: 1px solid var(--md-primary-fg-color);
+  border: 1px solid #5a6a28;
   border-radius: 8px;
   overflow: hidden;
 }
 
 .md-typeset .tabbed-labels {
-  background-color: var(--md-primary-fg-color);
-  border-bottom: 2px solid var(--md-primary-fg-color);
+  background-color: #5a6a28;  /* 진한 올리브색 */
+  border-bottom: 2px solid #4a5820;
 }
 
 .md-typeset .tabbed-labels > label {
   border-radius: 0;
   padding: 0.8em 1.2em;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.85);
   border-bottom: 3px solid transparent;
   margin-bottom: -2px;
   transition: all 0.2s ease;
 }
 
 .md-typeset .tabbed-labels > label:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.15);
   color: #ffffff;
 }
 
 .md-typeset .tabbed-labels > label:has(+ input:checked),
 .md-typeset .tabbed-labels > input:checked + label {
-  background-color: var(--md-default-bg-color);
-  color: var(--md-primary-fg-color);
-  border-bottom: 3px solid var(--md-primary-fg-color);
+  background-color: #f5f3e0;  /* 밝은 크림색 (콘텐츠 영역과 동일) */
+  color: #3a4218;
+  border-bottom: 3px solid #5a6a28;
   font-weight: 700;
 }
 
 .md-typeset .tabbed-content {
   padding: 1em;
-  background-color: var(--md-default-bg-color);
+  background-color: #f5f3e0;  /* 밝은 크림색 - 페이지 배경과 구분 */
+  border-top: none;
 }
 
 /* 다크 모드 탭 스타일 */
 [data-md-color-scheme="slate"] .md-typeset .tabbed-set {
-  border-color: var(--md-primary-fg-color);
+  border-color: #6b7a2e;
 }
 
 [data-md-color-scheme="slate"] .md-typeset .tabbed-labels {
-  background-color: var(--md-default-bg-color--light);
-  border-bottom-color: var(--md-primary-fg-color);
+  background-color: #4a5820;  /* 다크 모드용 진한 올리브색 */
+  border-bottom-color: #3a4818;
 }
 
 [data-md-color-scheme="slate"] .md-typeset .tabbed-content {
-  background-color: var(--md-default-bg-color);
+  background-color: #252520;  /* 다크 모드용 약간 밝은 배경 */
 }
 
 /* 푸터 스타일 */
