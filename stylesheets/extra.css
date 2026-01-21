@@ -1,87 +1,119 @@
-/* Matcha 색상 테마 - TOKU 스타일 */
+/* 모던 세이지 그린 테마 */
 :root {
-  /* 라이트 모드 색상 */
-  --md-primary-fg-color: #4a5320;
-  --md-primary-fg-color--light: #6b7a2e;
-  --md-primary-fg-color--dark: #3a4218;
-  --md-accent-fg-color: #6b7a2e;
-  --md-accent-fg-color--transparent: rgba(74, 83, 32, 0.1);
+  /* 라이트 모드 - 모던한 세이지 그린 */
+  --md-primary-fg-color: #5c6b4f;
+  --md-primary-fg-color--light: #7a8b6a;
+  --md-primary-fg-color--dark: #4a5640;
+  --md-accent-fg-color: #6b8f5e;
+  --md-accent-fg-color--transparent: rgba(92, 107, 79, 0.08);
   
-  /* 배경 색상 */
-  --md-default-bg-color: #F9F7E8;
-  --md-default-bg-color--light: #f0eedd;
-  --md-default-bg-color--lighter: #f5f3e5;
-  --md-default-bg-color--lightest: #fdfcf5;
+  /* 배경 - 거의 화이트에 가까운 따뜻한 톤 */
+  --md-default-bg-color: #fafaf8;
+  --md-default-bg-color--light: #f5f5f3;
+  --md-default-bg-color--lighter: #f8f8f6;
+  --md-default-bg-color--lightest: #ffffff;
   
-  /* 텍스트 색상 */
-  --md-typeset-color: #333333;
+  /* 텍스트 - 부드러운 다크 그레이 */
+  --md-typeset-color: #2d3a2d;
 }
 
 /* 다크 모드 색상 */
 [data-md-color-scheme="slate"] {
-  --md-primary-fg-color: #6b7a2e;
-  --md-primary-fg-color--light: #8a9a4a;
-  --md-primary-fg-color--dark: #4a5320;
-  --md-accent-fg-color: #8a9a4a;
-  --md-accent-fg-color--transparent: rgba(107, 122, 46, 0.1);
+  --md-primary-fg-color: #7a8b6a;
+  --md-primary-fg-color--light: #9aab8a;
+  --md-primary-fg-color--dark: #5c6b4f;
+  --md-accent-fg-color: #8fa87f;
+  --md-accent-fg-color--transparent: rgba(122, 139, 106, 0.12);
   
-  --md-default-bg-color: #1a1a1a;
-  --md-default-bg-color--light: #252525;
-  --md-default-bg-color--lighter: #2d2d2d;
-  --md-default-bg-color--lightest: #3a3a3a;
+  --md-default-bg-color: #1a1d1a;
+  --md-default-bg-color--light: #242824;
+  --md-default-bg-color--lighter: #2d312d;
+  --md-default-bg-color--lightest: #383d38;
 }
 
-/* Noto Sans KR 폰트 */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+/* Pretendard 폰트 - 모던하고 깔끔 */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
 body {
-  font-family: 'Noto Sans KR', sans-serif;
-  font-size: 14px;
-  line-height: 1.7;
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 13px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* 타이포그래피 */
+/* 타이포그래피 - 명확한 위계 */
 .md-typeset {
-  font-size: 0.85rem;
-  line-height: 1.7;
+  font-size: 0.8rem;
+  line-height: 1.8;
+  color: var(--md-typeset-color);
 }
 
 .md-typeset h1 {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
+  color: #2d3a2d;
 }
 
 .md-typeset h2 {
-  font-size: 1.4rem;
+  font-size: 1.25rem;
   font-weight: 600;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid rgba(92, 107, 79, 0.15);
 }
 
 .md-typeset h3 {
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-weight: 600;
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+  color: #3d4a3d;
 }
 
 .md-typeset h4, .md-typeset h5, .md-typeset h6 {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* 문단 여백 */
+.md-typeset p {
+  margin-bottom: 1rem;
+}
+
+/* 리스트 여백 개선 */
+.md-typeset ul, .md-typeset ol {
+  margin-bottom: 1rem;
+}
+
+.md-typeset li {
+  margin-bottom: 0.35rem;
+}
+
+.md-typeset li > p {
+  margin-bottom: 0.5rem;
 }
 
 /* 콘텐츠 폭 제한 */
 .md-content__inner {
-  max-width: 800px;
+  max-width: 760px;
   margin: 0 auto;
-  padding: 0 1.2rem 2rem;
+  padding: 1rem 1.5rem 2.5rem;
 }
 
-/* 전체 배경색 강제 적용 */
+/* 전체 배경색 */
 body,
 .md-main,
 .md-content,
 .md-sidebar,
 .md-container {
-  background-color: #F9F7E8 !important;
+  background-color: #fafaf8 !important;
 }
 
 [data-md-color-scheme="slate"] body,
@@ -89,16 +121,18 @@ body,
 [data-md-color-scheme="slate"] .md-content,
 [data-md-color-scheme="slate"] .md-sidebar,
 [data-md-color-scheme="slate"] .md-container {
-  background-color: #1a1a1a !important;
+  background-color: #1a1d1a !important;
 }
 
-/* 헤더 스타일 */
+/* 헤더 스타일 - 가벼운 느낌 */
 .md-header {
   background-color: var(--md-primary-fg-color);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .md-header__title {
-  font-weight: 700;
+  font-weight: 600;
+  font-size: 0.85rem;
 }
 
 /* 네비게이션 스타일 */
@@ -107,7 +141,8 @@ body,
 }
 
 .md-nav__link {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
+  padding: 0.4rem 0.6rem;
 }
 
 .md-nav__item--active > .md-nav__link {
@@ -118,15 +153,20 @@ body,
 /* 사이드바 스타일 */
 .md-sidebar__scrollwrap {
   scrollbar-width: thin;
-  scrollbar-color: var(--md-primary-fg-color--light) transparent;
+  scrollbar-color: rgba(92, 107, 79, 0.3) transparent;
 }
 
-/* 버튼 및 링크 호버 효과 */
-.md-button:hover,
-.md-nav__link:hover,
-a:hover {
-  color: var(--md-primary-fg-color--light);
-  transition: color 0.2s ease-in-out;
+/* 링크 스타일 */
+.md-typeset a {
+  color: #5a7a4a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(90, 122, 74, 0.3);
+  transition: all 0.15s ease;
+}
+
+.md-typeset a:hover {
+  color: #4a6a3a;
+  border-bottom-color: #4a6a3a;
 }
 
 /* 콘텐츠 영역 스타일 */
@@ -138,11 +178,39 @@ a:hover {
   margin-bottom: 2rem;
 }
 
-/* Admonition 스타일 */
+/* Admonition 스타일 - 부드럽게 */
 .md-typeset .admonition,
 .md-typeset details {
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  font-size: 0.78rem;
+}
+
+.md-typeset .admonition-title,
+.md-typeset summary {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* 인라인 코드 스타일 */
+.md-typeset code {
+  font-size: 0.78rem;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  background-color: rgba(92, 107, 79, 0.08);
+  color: #4a5a42;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* 코드블록 스타일 */
+.md-typeset pre {
+  border-radius: 6px;
+  font-size: 0.75rem;
+}
+
+.md-typeset pre > code {
+  font-size: 0.75rem;
 }
 
 /* 테이블 스타일 */
@@ -185,64 +253,72 @@ a:hover {
   background: var(--md-primary-fg-color);
 }
 
-/* 탭 스타일 - 말차 테마 */
+/* 탭 스타일 - 모던하게 */
 .md-typeset .tabbed-set {
-  border: 1px solid #5a6a28;
-  border-radius: 8px;
+  border: 1px solid rgba(92, 107, 79, 0.2);
+  border-radius: 6px;
   overflow: hidden;
 }
 
 .md-typeset .tabbed-labels {
-  background-color: #5a6a28;  /* 진한 올리브색 */
-  border-bottom: 2px solid #4a5820;
+  background-color: #5c6b4f;
+  border-bottom: none;
 }
 
 .md-typeset .tabbed-labels > label {
   border-radius: 0;
-  padding: 0.8em 1.2em;
+  padding: 0.6em 1em;
   font-weight: 500;
+  font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.85);
-  border-bottom: 3px solid transparent;
-  margin-bottom: -2px;
-  transition: all 0.2s ease;
+  border-bottom: 2px solid transparent;
+  margin-bottom: 0;
+  transition: all 0.15s ease;
 }
 
 .md-typeset .tabbed-labels > label:hover {
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.1);
   color: #ffffff;
 }
 
 .md-typeset .tabbed-labels > label:has(+ input:checked),
 .md-typeset .tabbed-labels > input:checked + label {
-  background-color: #f5f3e0;  /* 밝은 크림색 (콘텐츠 영역과 동일) */
-  color: #3a4218;
-  border-bottom: 3px solid #5a6a28;
-  font-weight: 700;
+  background-color: #f8f8f6;
+  color: #4a5640;
+  border-bottom: 2px solid #5c6b4f;
+  font-weight: 600;
 }
 
 .md-typeset .tabbed-content {
-  padding: 1em;
-  background-color: #f5f3e0;  /* 밝은 크림색 - 페이지 배경과 구분 */
+  padding: 1rem;
+  background-color: #f8f8f6;
   border-top: none;
+  font-size: 0.78rem;
 }
 
 /* 다크 모드 탭 스타일 */
 [data-md-color-scheme="slate"] .md-typeset .tabbed-set {
-  border-color: #6b7a2e;
+  border-color: rgba(122, 139, 106, 0.3);
 }
 
 [data-md-color-scheme="slate"] .md-typeset .tabbed-labels {
-  background-color: #4a5820;  /* 다크 모드용 진한 올리브색 */
-  border-bottom-color: #3a4818;
+  background-color: #4a5640;
 }
 
 [data-md-color-scheme="slate"] .md-typeset .tabbed-content {
-  background-color: #252520;  /* 다크 모드용 약간 밝은 배경 */
+  background-color: #242824;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .tabbed-labels > label:has(+ input:checked),
+[data-md-color-scheme="slate"] .md-typeset .tabbed-labels > input:checked + label {
+  background-color: #242824;
+  color: #c8d4c0;
 }
 
 /* 푸터 스타일 */
 .md-footer {
   background-color: var(--md-primary-fg-color);
+  font-size: 0.72rem;
 }
 
 /* 반응형 디자인 */
@@ -252,19 +328,39 @@ a:hover {
   }
 }
 
+/* 스크롤바 스타일 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(92, 107, 79, 0.25);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(92, 107, 79, 0.4);
+}
+
 /* 인라인 하이라이트 박스 */
 .highlight-box {
-  background-color: #e3f2fd;
-  padding: 2px 8px;
-  border-radius: 4px;
-  border: 1px solid #90caf9;
+  background-color: rgba(25, 118, 210, 0.06);
+  padding: 0.1rem 0.5rem;
+  border-radius: 3px;
+  border: 1px solid rgba(25, 118, 210, 0.15);
   white-space: nowrap;
+  font-size: 0.82em;
 }
 
 /* 다크 모드용 하이라이트 박스 */
 [data-md-color-scheme="slate"] .highlight-box {
-  background-color: #1e3a5f;
-  border-color: #4a7cb5;
+  background-color: rgba(100, 181, 246, 0.12);
+  border-color: rgba(100, 181, 246, 0.25);
 }
 
 /* 이미지 중앙 정렬 */
@@ -273,80 +369,79 @@ a:hover {
   margin: 0 auto;
 }
 
-/* ===== 색상별 인라인 박스 ===== */
-/* 공통: 회색 배경 + 텍스트 색상만 다름 */
+/* 색상별 인라인 박스 - 모던 스타일 */
 
 /* 파란색 텍스트 - 세계 변수, range 등 */
 .box-blue {
-  background-color: #f0f0f0;
-  color: #1976d2;
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-family: monospace;
-  font-size: 0.9em;
+  background-color: rgba(25, 118, 210, 0.08);
+  color: #1565c0;
+  padding: 0.1rem 0.45rem;
+  border-radius: 3px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82em;
 }
 
 /* 분홍색 텍스트 - 캐릭터 속성 등 */
 .box-pink {
-  background-color: #f0f0f0;
-  color: #d81b60;
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-family: monospace;
-  font-size: 0.9em;
+  background-color: rgba(216, 27, 96, 0.08);
+  color: #c2185b;
+  padding: 0.1rem 0.45rem;
+  border-radius: 3px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82em;
 }
 
 /* 보라색 텍스트 - 칭호, 특수 변수 등 */
 .box-purple {
-  background-color: #f0f0f0;
-  color: #8e24aa;
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-family: monospace;
-  font-size: 0.9em;
+  background-color: rgba(142, 36, 170, 0.08);
+  color: #7b1fa2;
+  padding: 0.1rem 0.45rem;
+  border-radius: 3px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82em;
 }
 
 /* 초록색 텍스트 - type 등 */
 .box-green {
-  background-color: #f0f0f0;
-  color: #388e3c;
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-family: monospace;
-  font-size: 0.9em;
+  background-color: rgba(56, 142, 60, 0.08);
+  color: #2e7d32;
+  padding: 0.1rem 0.45rem;
+  border-radius: 3px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82em;
 }
 
 /* 주황색 텍스트 - format 등 */
 .box-orange {
-  background-color: #f0f0f0;
+  background-color: rgba(230, 81, 0, 0.08);
   color: #e65100;
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-family: monospace;
-  font-size: 0.9em;
+  padding: 0.1rem 0.45rem;
+  border-radius: 3px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82em;
 }
 
 /* 빨간색 텍스트 - check 등 */
 .box-red {
-  background-color: #f0f0f0;
+  background-color: rgba(198, 40, 40, 0.08);
   color: #c62828;
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-family: monospace;
-  font-size: 0.9em;
+  padding: 0.1rem 0.45rem;
+  border-radius: 3px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82em;
 }
 
 /* 노란색/갈색 텍스트 */
 .box-yellow {
-  background-color: #f0f0f0;
-  color: #f57f17;
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-family: monospace;
-  font-size: 0.9em;
+  background-color: rgba(245, 127, 23, 0.1);
+  color: #ef6c00;
+  padding: 0.1rem 0.45rem;
+  border-radius: 3px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82em;
 }
 
-/* ===== 다크 모드 대응 ===== */
+/* 다크 모드 대응 */
 [data-md-color-scheme="slate"] .box-blue,
 [data-md-color-scheme="slate"] .box-pink,
 [data-md-color-scheme="slate"] .box-purple,
@@ -354,7 +449,7 @@ a:hover {
 [data-md-color-scheme="slate"] .box-orange,
 [data-md-color-scheme="slate"] .box-red,
 [data-md-color-scheme="slate"] .box-yellow {
-  background-color: #3a3a3a;
+  background-color: rgba(255, 255, 255, 0.08);
 }
 [data-md-color-scheme="slate"] .box-blue { color: #64b5f6; }
 [data-md-color-scheme="slate"] .box-pink { color: #f48fb1; }
