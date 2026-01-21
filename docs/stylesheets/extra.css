@@ -187,35 +187,35 @@ a:hover {
 
 /* 탭 스타일 - 말차 테마 */
 .md-typeset .tabbed-set {
-  border: 1px solid var(--md-primary-fg-color--light);
+  border: 1px solid var(--md-primary-fg-color);
   border-radius: 8px;
   overflow: hidden;
 }
 
 .md-typeset .tabbed-labels {
-  background-color: var(--md-default-bg-color--lighter);
-  border-bottom: 2px solid var(--md-primary-fg-color--light);
+  background-color: var(--md-primary-fg-color);
+  border-bottom: 2px solid var(--md-primary-fg-color);
 }
 
 .md-typeset .tabbed-labels > label {
   border-radius: 0;
   padding: 0.8em 1.2em;
   font-weight: 500;
-  color: var(--md-primary-fg-color);
+  color: rgba(255, 255, 255, 0.8);
   border-bottom: 3px solid transparent;
   margin-bottom: -2px;
   transition: all 0.2s ease;
 }
 
 .md-typeset .tabbed-labels > label:hover {
-  background-color: var(--md-accent-fg-color--transparent);
-  color: var(--md-primary-fg-color--dark);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
 }
 
 .md-typeset .tabbed-labels > label:has(+ input:checked),
 .md-typeset .tabbed-labels > input:checked + label {
   background-color: var(--md-default-bg-color);
-  color: var(--md-primary-fg-color--dark);
+  color: var(--md-primary-fg-color);
   border-bottom: 3px solid var(--md-primary-fg-color);
   font-weight: 700;
 }
