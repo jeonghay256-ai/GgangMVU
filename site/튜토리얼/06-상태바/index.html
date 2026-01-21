@@ -1017,82 +1017,81 @@
 <p>PC 사용자 권장 사항: 만약 컴퓨터로 작업 중이라면, 직접 파일을 보내는 것보다 [실시간 프론트엔드 인터페이스 또는 스크립트 작성] 기능을 사용하여 AI가 술집(Tavern) 웹페이지를 직접 보면서 상태창을 작성하게 하는 것을 더 추천합니다.</p>
 </li>
 </ul>
-<p>```html
-    
-      <style>
-      ${순수 CSS 디자인 스타일}
-      </style>
-      <script type="module">
-        ${
-          로직 코드
-          example: |-
-            function populateCharacterData() {
-              const all_variables = getAllVariables();</p>
-<div class="highlight"><pre><span></span><code>          // 변수 경로에 있는 값을 가져오거나 없으면 &#39;N/A&#39; 표시
-          const property_value = _.get(all_variables, &#39;stat_data.${변수 경로}&#39;, &#39;N/A&#39;);
-          $(&#39;#${캐릭터}-${변수 경로}&#39;).text(property_value);
-          ...
-        }
-
-        function toggleSection($header) {
-          // 순수 JavaScript DOM 조작보다 jQuery 사용을 우선시함
-          const $content = $header.next(&#39;.section-content&#39;);
-          $content.toggleClass(&#39;expanded&#39;);
-
-          const $arrow = $header.find(&#39;span:last-child&#39;);
-          $arrow.text($content.hasClass(&#39;expanded&#39;) ? &#39;▼&#39; : &#39;►&#39;);
-        }
-
-        async function init() {
-          await waitGlobalInitialized(&#39;Mvu&#39;);
-          populateCharacterData();
-
-          $(&#39;.section-header&#39;).on(&#39;click&#39;, function () {
-            toggleSection($(this));
-          });
-        }
-
-        $(errorCatched(init));
-    }
-  &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;div class=&quot;card-body&quot;&gt;
-    &lt;div class=&quot;section&quot;&gt;
-      &lt;div class=&quot;section-header&quot;&gt;
-        &lt;span&gt;${캐릭터명} 핵심 상태&lt;/span&gt;
-        &lt;span&gt;▼&lt;/span&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;section-content expanded&quot;&gt;
-        &lt;div class=&quot;property&quot;&gt;
-          &lt;div class=&quot;property-name&quot;&gt;${한국어 변수명}&lt;/div&gt;
-          &lt;div class=&quot;property-value-container&quot;&gt;
-            &lt;span class=&quot;property-value&quot; id=&quot;${캐릭터}-${변수 경로}&quot;&gt;--&lt;/span&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;property&quot;&gt;
-          &lt;div class=&quot;property-name&quot;&gt;${...}&lt;/div&gt;
-          &lt;div class=&quot;property-value-container&quot;&gt;
-            &lt;span class=&quot;property-value&quot; id=&quot;${...}&quot;&gt;--&lt;/span&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-        ...
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;section&quot;&gt;
-      &lt;div class=&quot;section-header&quot;&gt;
-        &lt;span&gt;월드 상태&lt;/span&gt;
-        &lt;span&gt;►&lt;/span&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;section-content&quot;&gt;${...}&lt;/div&gt;
-    &lt;/div&gt;
-    ...
-  &lt;/div&gt;
-&lt;/body&gt;
-```
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>  <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="o">$</span><span class="p">{</span><span class="err">순수</span><span class="w"> </span><span class="err">CSS</span><span class="w"> </span><span class="err">디자인</span><span class="w"> </span><span class="err">스타일</span><span class="p">}</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">"module"</span><span class="p">&gt;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="nx">$</span><span class="p">{</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">      </span><span class="nx">로직</span><span class="w"> </span><span class="nx">코드</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">      </span><span class="nx">example</span><span class="o">:</span><span class="w"> </span><span class="o">|-</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">        </span><span class="kd">function</span><span class="w"> </span><span class="nx">populateCharacterData</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">          </span><span class="kd">const</span><span class="w"> </span><span class="nx">all_variables</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getAllVariables</span><span class="p">();</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">          </span><span class="c1">// 변수 경로에 있는 값을 가져오거나 없으면 'N/A' 표시</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">          </span><span class="kd">const</span><span class="w"> </span><span class="nx">property_value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">_</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">all_variables</span><span class="p">,</span><span class="w"> </span><span class="s1">'stat_data.${변수 경로}'</span><span class="p">,</span><span class="w"> </span><span class="s1">'N/A'</span><span class="p">);</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">          </span><span class="nx">$</span><span class="p">(</span><span class="s1">'#${캐릭터}-${변수 경로}'</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="nx">property_value</span><span class="p">);</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">          </span><span class="p">...</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">        </span><span class="kd">function</span><span class="w"> </span><span class="nx">toggleSection</span><span class="p">(</span><span class="nx">$header</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">          </span><span class="c1">// 순수 JavaScript DOM 조작보다 jQuery 사용을 우선시함</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">          </span><span class="kd">const</span><span class="w"> </span><span class="nx">$content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$header</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="s1">'.section-content'</span><span class="p">);</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">          </span><span class="nx">$content</span><span class="p">.</span><span class="nx">toggleClass</span><span class="p">(</span><span class="s1">'expanded'</span><span class="p">);</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">          </span><span class="kd">const</span><span class="w"> </span><span class="nx">$arrow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$header</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">'span:last-child'</span><span class="p">);</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="w">          </span><span class="nx">$arrow</span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="nx">$content</span><span class="p">.</span><span class="nx">hasClass</span><span class="p">(</span><span class="s1">'expanded'</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">'▼'</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">'►'</span><span class="p">);</span>
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="w">        </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a><span class="w">          </span><span class="k">await</span><span class="w"> </span><span class="nx">waitGlobalInitialized</span><span class="p">(</span><span class="s1">'Mvu'</span><span class="p">);</span>
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a><span class="w">          </span><span class="nx">populateCharacterData</span><span class="p">();</span>
+<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>
+<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a><span class="w">          </span><span class="nx">$</span><span class="p">(</span><span class="s1">'.section-header'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a><span class="w">            </span><span class="nx">toggleSection</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
+<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a><span class="w">          </span><span class="p">});</span>
+<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a>
+<a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a><span class="w">        </span><span class="nx">$</span><span class="p">(</span><span class="nx">errorCatched</span><span class="p">(</span><span class="nx">init</span><span class="p">));</span>
+<a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a><span class="w">  </span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<a id="__codelineno-4-40" name="__codelineno-4-40" href="#__codelineno-4-40"></a><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-4-41" name="__codelineno-4-41" href="#__codelineno-4-41"></a>  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"card-body"</span><span class="p">&gt;</span>
+<a id="__codelineno-4-42" name="__codelineno-4-42" href="#__codelineno-4-42"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"section"</span><span class="p">&gt;</span>
+<a id="__codelineno-4-43" name="__codelineno-4-43" href="#__codelineno-4-43"></a>      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"section-header"</span><span class="p">&gt;</span>
+<a id="__codelineno-4-44" name="__codelineno-4-44" href="#__codelineno-4-44"></a>        <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>${캐릭터명} 핵심 상태<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<a id="__codelineno-4-45" name="__codelineno-4-45" href="#__codelineno-4-45"></a>        <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>▼<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<a id="__codelineno-4-46" name="__codelineno-4-46" href="#__codelineno-4-46"></a>      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-4-47" name="__codelineno-4-47" href="#__codelineno-4-47"></a>      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"section-content expanded"</span><span class="p">&gt;</span>
+<a id="__codelineno-4-48" name="__codelineno-4-48" href="#__codelineno-4-48"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"property"</span><span class="p">&gt;</span>
+<a id="__codelineno-4-49" name="__codelineno-4-49" href="#__codelineno-4-49"></a>          <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"property-name"</span><span class="p">&gt;</span>${한국어 변수명}<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-4-50" name="__codelineno-4-50" href="#__codelineno-4-50"></a>          <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"property-value-container"</span><span class="p">&gt;</span>
+<a id="__codelineno-4-51" name="__codelineno-4-51" href="#__codelineno-4-51"></a>            <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">"property-value"</span> <span class="na">id</span><span class="o">=</span><span class="s">"${캐릭터}-${변수 경로}"</span><span class="p">&gt;</span>--<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<a id="__codelineno-4-52" name="__codelineno-4-52" href="#__codelineno-4-52"></a>          <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-4-53" name="__codelineno-4-53" href="#__codelineno-4-53"></a>        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-4-54" name="__codelineno-4-54" href="#__codelineno-4-54"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"property"</span><span class="p">&gt;</span>
+<a id="__codelineno-4-55" name="__codelineno-4-55" href="#__codelineno-4-55"></a>          <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"property-name"</span><span class="p">&gt;</span>${...}<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-4-56" name="__codelineno-4-56" href="#__codelineno-4-56"></a>          <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"property-value-container"</span><span class="p">&gt;</span>
+<a id="__codelineno-4-57" name="__codelineno-4-57" href="#__codelineno-4-57"></a>            <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">"property-value"</span> <span class="na">id</span><span class="o">=</span><span class="s">"${...}"</span><span class="p">&gt;</span>--<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<a id="__codelineno-4-58" name="__codelineno-4-58" href="#__codelineno-4-58"></a>          <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-4-59" name="__codelineno-4-59" href="#__codelineno-4-59"></a>        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-4-60" name="__codelineno-4-60" href="#__codelineno-4-60"></a>        ...
+<a id="__codelineno-4-61" name="__codelineno-4-61" href="#__codelineno-4-61"></a>      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-4-62" name="__codelineno-4-62" href="#__codelineno-4-62"></a>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-4-63" name="__codelineno-4-63" href="#__codelineno-4-63"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"section"</span><span class="p">&gt;</span>
+<a id="__codelineno-4-64" name="__codelineno-4-64" href="#__codelineno-4-64"></a>      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"section-header"</span><span class="p">&gt;</span>
+<a id="__codelineno-4-65" name="__codelineno-4-65" href="#__codelineno-4-65"></a>        <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>월드 상태<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<a id="__codelineno-4-66" name="__codelineno-4-66" href="#__codelineno-4-66"></a>        <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>►<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<a id="__codelineno-4-67" name="__codelineno-4-67" href="#__codelineno-4-67"></a>      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-4-68" name="__codelineno-4-68" href="#__codelineno-4-68"></a>      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"section-content"</span><span class="p">&gt;</span>${...}<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-4-69" name="__codelineno-4-69" href="#__codelineno-4-69"></a>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-4-70" name="__codelineno-4-70" href="#__codelineno-4-70"></a>    ...
+<a id="__codelineno-4-71" name="__codelineno-4-71" href="#__codelineno-4-71"></a>  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-4-72" name="__codelineno-4-72" href="#__codelineno-4-72"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 </code></pre></div>
 </details>
-<h2 id="_5">회고<a class="headerlink" href="#_5" title="Permanent link">&para;</a></2>
+<h2 id="_5">회고<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
 <p>여기까지 우리는 <code>&lt;StatusPlaceHolderImpl/&gt;</code> 플레이스홀더를 활용하여 다음과 같은 인터페이스를 만들었습니다:</p>
 <ul>
 <li>표시에 어떤 토큰도 소비하지 않음</li>
@@ -1103,24 +1102,24 @@
 <p>하지만 여기 인터페이스 튜토리얼에 의해 상상력이 제한되지 않도록 하세요.</p>
 <p>굳이 <code>&lt;StatusPlaceHolderImpl/&gt;</code>를 사용하여 인터페이스를 표시할 필요는 없습니다. 다른 어떤 방법으로든 표시할 수 있습니다: 직접 출력 형식을 정의하여 AI가 다른 필요한 정보를 출력하게 하고, Tavern 정규식으로 이를 캡처한 뒤 여러분의 인터페이스로 대체할 수 있습니다.</p>
 </div>
-<h2 id="_6">메시지 시작 부분에 인터페이스 표시하기<a class="headerlink" href="#_6" title="Permanent link">&para;</a></2>
+<h2 id="_6">메시지 시작 부분에 인터페이스 표시하기<a class="headerlink" href="#_6" title="Permanent link">¶</a></h2>
 <p>또한, <code>&lt;StatusPlaceHolderImpl/&gt;</code> 플레이스홀더를 사용하더라도, Tavern 정규식을 조정하여 메시지 끝(<code>&lt;StatusPlaceHolderImpl/&gt;</code>의 실제 위치)이 아닌 <strong>메시지 시작 부분</strong>에 인터페이스를 표시할 수 있습니다:</p>
 <div class="admonition example">
 <p class="admonition-title">정규식 설정 결과</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>스크립트 이름: [인터페이스]상태바
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>찾기 정규표현식: /(.*)&lt;StatusPlaceHolderImpl/&gt;/s
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>대체:
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>  여러분의 인터페이스
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>  $1
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>적용 범위:
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>  - [ ] 사용자 입력
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>  - [x] AI 출력
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>임시:
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>  - [x] 표시 전용 포맷
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>  - [ ] 프롬프트 전용 포맷
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>스크립트 이름: [인터페이스]상태바
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>찾기 정규표현식: /(.*)&lt;StatusPlaceHolderImpl/&gt;/s
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>대체:
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>  여러분의 인터페이스
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>  $1
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>적용 범위:
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>  - [ ] 사용자 입력
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>  - [x] AI 출력
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>임시:
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>  - [x] 표시 전용 포맷
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>  - [ ] 프롬프트 전용 포맷
 </code></pre></div>
 </div>
-<p>이 예시를 참고로, 여기 인터페이스 튜토리얼에 의해 상상력이 제한되지 않도록 하세요.</p></script></p></details>
+<p>이 예시는 참고로만 두고, 여기 있는 튜토리얼에 얽매여 상상력을 제한받지 마세요.</p>
 
 
 
